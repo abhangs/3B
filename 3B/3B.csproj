@@ -46,6 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookReview.Designer.cs">
+      <DependentUpon>BookReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmOrder.Designer.cs">
+      <DependentUpon>ConfirmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="confirmOrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="confirmOrderControl.Designer.cs">
+      <DependentUpon>confirmOrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProofOfPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProofOfPurchase.Designer.cs">
+      <DependentUpon>ProofOfPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMERREGISTRATION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUSTOMERREGISTRATION.Designer.cs">
+      <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.Designer.cs">
+      <DependentUpon>ShoppingCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +108,30 @@
     <Compile Include="searchResultControl.Designer.cs">
       <DependentUpon>searchResultControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="shoppingCartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="shoppingCartControl.Designer.cs">
+      <DependentUpon>shoppingCartControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BookReview.resx">
+      <DependentUpon>BookReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmOrder.resx">
+      <DependentUpon>ConfirmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmOrderControl.resx">
+      <DependentUpon>confirmOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProofOfPurchase.resx">
+      <DependentUpon>ProofOfPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CUSTOMERREGISTRATION.resx">
+      <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShoppingCart.resx">
+      <DependentUpon>ShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="searchResultControl.resx">
       <DependentUpon>searchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shoppingCartControl.resx">
+      <DependentUpon>shoppingCartControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

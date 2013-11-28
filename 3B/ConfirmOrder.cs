@@ -10,20 +10,14 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    public partial class SearchResult : Form
+    public partial class ConfirmOrder : Form
     {
-        public SearchResult()
+        public ConfirmOrder()
         {
             InitializeComponent();
         }
 
-        private void SearchResult_Load(object sender, EventArgs e)
-        {
-            //searchResultControl src = new searchResultControl();
-            //panel1.Controls.Add(src);
-                   
-        }
-
+       
        
     }
 }

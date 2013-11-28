@@ -34,8 +34,10 @@
             this.checkoutBtn = new System.Windows.Forms.Button();
             this.newSearchBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.searchResultPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.searchResultPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -44,7 +46,7 @@
             this.groupBox1.Controls.Add(this.currentItemCountLbl);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 56);
+            this.groupBox1.Size = new System.Drawing.Size(419, 45);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -52,7 +54,7 @@
             // 
             this.currentItemCountLbl.AutoSize = true;
             this.currentItemCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentItemCountLbl.Location = new System.Drawing.Point(6, 18);
+            this.currentItemCountLbl.Location = new System.Drawing.Point(15, 13);
             this.currentItemCountLbl.Name = "currentItemCountLbl";
             this.currentItemCountLbl.Size = new System.Drawing.Size(360, 29);
             this.currentItemCountLbl.TabIndex = 0;
@@ -63,7 +65,7 @@
             this.manageCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageCartBtn.Location = new System.Drawing.Point(488, 12);
             this.manageCartBtn.Name = "manageCartBtn";
-            this.manageCartBtn.Size = new System.Drawing.Size(285, 56);
+            this.manageCartBtn.Size = new System.Drawing.Size(285, 45);
             this.manageCartBtn.TabIndex = 1;
             this.manageCartBtn.Text = "Manage Shopping Cart";
             this.manageCartBtn.UseVisualStyleBackColor = true;
@@ -98,29 +100,40 @@
             this.exitBtn.Text = "EXIT 3-B.Com";
             this.exitBtn.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // searchResultPanel
             // 
-            this.listView1.Location = new System.Drawing.Point(13, 74);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(760, 234);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.searchResultPanel.AutoScroll = true;
+            this.searchResultPanel.Controls.Add(this.panel1);
+            this.searchResultPanel.Location = new System.Drawing.Point(13, 74);
+            this.searchResultPanel.Name = "searchResultPanel";
+            this.searchResultPanel.Size = new System.Drawing.Size(760, 234);
+            this.searchResultPanel.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(-11, -11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(771, 245);
+            this.panel1.TabIndex = 6;
             // 
             // SearchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 371);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.searchResultPanel);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newSearchBtn);
             this.Controls.Add(this.checkoutBtn);
             this.Controls.Add(this.manageCartBtn);
             this.Controls.Add(this.groupBox1);
             this.Name = "SearchResult";
-            this.Text = "SearchResult";
+            this.Text = "Shopping Cart - 3-B.com";
+            this.Load += new System.EventHandler(this.SearchResult_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.searchResultPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -133,6 +146,7 @@
         private System.Windows.Forms.Button checkoutBtn;
         private System.Windows.Forms.Button newSearchBtn;
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Panel searchResultPanel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

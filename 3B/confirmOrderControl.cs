@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    public partial class mainForm : Form
+    public partial class confirmOrderControl : UserControl
     {
-        public mainForm()
+        public confirmOrderControl()
         {
             InitializeComponent();
-        }
-
-        private void enterBtn_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    public partial class SearchResult : Form
+    public partial class custRegisterForm : Form
     {
-        public SearchResult()
+        public custRegisterForm()
         {
             InitializeComponent();
-        }
-
-        private void SearchResult_Load(object sender, EventArgs e)
-        {
-            //searchResultControl src = new searchResultControl();
-            //panel1.Controls.Add(src);
-                   
         }
 
        

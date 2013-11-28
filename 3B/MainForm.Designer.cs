@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.radioGrpBox = new System.Windows.Forms.GroupBox();
-            this.searchRadioButton = new System.Windows.Forms.RadioButton();
-            this.newCustRadioButton = new System.Windows.Forms.RadioButton();
-            this.returnCustRadioBox = new System.Windows.Forms.RadioButton();
             this.adminRadioButton = new System.Windows.Forms.RadioButton();
+            this.returnCustRadioBox = new System.Windows.Forms.RadioButton();
+            this.newCustRadioButton = new System.Windows.Forms.RadioButton();
+            this.searchRadioButton = new System.Windows.Forms.RadioButton();
             this.enterBtn = new System.Windows.Forms.Button();
             this.radioGrpBox.SuspendLayout();
             this.SuspendLayout();
@@ -73,31 +73,18 @@
             this.radioGrpBox.TabIndex = 2;
             this.radioGrpBox.TabStop = false;
             // 
-            // searchRadioButton
+            // adminRadioButton
             // 
-            this.searchRadioButton.AutoSize = true;
-            this.searchRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchRadioButton.ForeColor = System.Drawing.Color.Black;
-            this.searchRadioButton.Location = new System.Drawing.Point(60, 21);
-            this.searchRadioButton.Name = "searchRadioButton";
-            this.searchRadioButton.Size = new System.Drawing.Size(133, 24);
-            this.searchRadioButton.TabIndex = 0;
-            this.searchRadioButton.TabStop = true;
-            this.searchRadioButton.Text = "Search Only";
-            this.searchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // newCustRadioButton
-            // 
-            this.newCustRadioButton.AutoSize = true;
-            this.newCustRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newCustRadioButton.ForeColor = System.Drawing.Color.Black;
-            this.newCustRadioButton.Location = new System.Drawing.Point(60, 51);
-            this.newCustRadioButton.Name = "newCustRadioButton";
-            this.newCustRadioButton.Size = new System.Drawing.Size(153, 24);
-            this.newCustRadioButton.TabIndex = 1;
-            this.newCustRadioButton.TabStop = true;
-            this.newCustRadioButton.Text = "New Customer";
-            this.newCustRadioButton.UseVisualStyleBackColor = true;
+            this.adminRadioButton.AutoSize = true;
+            this.adminRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminRadioButton.ForeColor = System.Drawing.Color.Black;
+            this.adminRadioButton.Location = new System.Drawing.Point(60, 111);
+            this.adminRadioButton.Name = "adminRadioButton";
+            this.adminRadioButton.Size = new System.Drawing.Size(143, 24);
+            this.adminRadioButton.TabIndex = 3;
+            this.adminRadioButton.TabStop = true;
+            this.adminRadioButton.Text = "Administrator";
+            this.adminRadioButton.UseVisualStyleBackColor = true;
             // 
             // returnCustRadioBox
             // 
@@ -112,18 +99,31 @@
             this.returnCustRadioBox.Text = "Returning Customer";
             this.returnCustRadioBox.UseVisualStyleBackColor = true;
             // 
-            // adminRadioButton
+            // newCustRadioButton
             // 
-            this.adminRadioButton.AutoSize = true;
-            this.adminRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminRadioButton.ForeColor = System.Drawing.Color.Black;
-            this.adminRadioButton.Location = new System.Drawing.Point(60, 111);
-            this.adminRadioButton.Name = "adminRadioButton";
-            this.adminRadioButton.Size = new System.Drawing.Size(143, 24);
-            this.adminRadioButton.TabIndex = 3;
-            this.adminRadioButton.TabStop = true;
-            this.adminRadioButton.Text = "Administrator";
-            this.adminRadioButton.UseVisualStyleBackColor = true;
+            this.newCustRadioButton.AutoSize = true;
+            this.newCustRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newCustRadioButton.ForeColor = System.Drawing.Color.Black;
+            this.newCustRadioButton.Location = new System.Drawing.Point(60, 51);
+            this.newCustRadioButton.Name = "newCustRadioButton";
+            this.newCustRadioButton.Size = new System.Drawing.Size(153, 24);
+            this.newCustRadioButton.TabIndex = 1;
+            this.newCustRadioButton.TabStop = true;
+            this.newCustRadioButton.Text = "New Customer";
+            this.newCustRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // searchRadioButton
+            // 
+            this.searchRadioButton.AutoSize = true;
+            this.searchRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchRadioButton.ForeColor = System.Drawing.Color.Black;
+            this.searchRadioButton.Location = new System.Drawing.Point(60, 21);
+            this.searchRadioButton.Name = "searchRadioButton";
+            this.searchRadioButton.Size = new System.Drawing.Size(133, 24);
+            this.searchRadioButton.TabIndex = 0;
+            this.searchRadioButton.TabStop = true;
+            this.searchRadioButton.Text = "Search Only";
+            this.searchRadioButton.UseVisualStyleBackColor = true;
             // 
             // enterBtn
             // 
@@ -134,6 +134,7 @@
             this.enterBtn.TabIndex = 3;
             this.enterBtn.Text = "ENTER";
             this.enterBtn.UseVisualStyleBackColor = true;
+            this.enterBtn.Click += new System.EventHandler(this.enterBtn_Click);
             // 
             // mainForm
             // 
