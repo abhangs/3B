@@ -40,7 +40,7 @@
             this.cardNumberTxtBox = new System.Windows.Forms.TextBox();
             this.cardTypeCmbBox = new System.Windows.Forms.ComboBox();
             this.newCardRadioBtn = new System.Windows.Forms.RadioButton();
-            this.label22 = new System.Windows.Forms.Label();
+           // this.label22 = new System.Windows.Forms.Label();
             this.useCreditCardRadioBtn = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -154,7 +154,7 @@
             this.panel2.Controls.Add(this.cardNumberTxtBox);
             this.panel2.Controls.Add(this.cardTypeCmbBox);
             this.panel2.Controls.Add(this.newCardRadioBtn);
-            this.panel2.Controls.Add(this.label22);
+           // this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.useCreditCardRadioBtn);
             this.panel2.Location = new System.Drawing.Point(365, 55);
             this.panel2.Name = "panel2";
@@ -192,13 +192,13 @@
             // 
             // cardInfoLbl
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(35, 76);
-            this.label22.Name = "cardInfoLbl";
-            this.label22.Size = new System.Drawing.Size(77, 20);
-            this.label22.TabIndex = 7;
-            this.label22.Text = "Card Info";
+            //this.label22.AutoSize = true;
+            //this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.label22.Location = new System.Drawing.Point(35, 76);
+            //this.label22.Name = "cardInfoLbl";
+            //this.label22.Size = new System.Drawing.Size(77, 20);
+            //this.label22.TabIndex = 7;
+            //this.label22.Text = "Card Info";
             // 
             // useCreditCardRadioBtn
             // 

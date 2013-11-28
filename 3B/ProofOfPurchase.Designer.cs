@@ -1,6 +1,6 @@
 ﻿namespace _3B
 {
-    partial class ConfirmOrder
+    partial class ProofOfPurchase
     {
         /// <summary>
         /// Required designer variable.

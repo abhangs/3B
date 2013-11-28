@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    public partial class ConfirmOrder : Form
+    public partial class ProofOfPurchase : Form
     {
-        public ConfirmOrder()
+        public ProofOfPurchase()
         {
             InitializeComponent();
         }
