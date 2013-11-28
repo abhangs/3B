@@ -147,6 +147,6 @@
         private System.Windows.Forms.Button newSearchBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Panel searchResultPanel;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel1;
     }
 }

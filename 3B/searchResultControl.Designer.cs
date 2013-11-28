@@ -170,14 +170,14 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label bookLbl;
         private System.Windows.Forms.Label ByLbl;
-        private System.Windows.Forms.Label byLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label publisherLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label isbnLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label priceLbl;
+        public System.Windows.Forms.Label byLabel;
+        public System.Windows.Forms.Label bookLbl;
+        public System.Windows.Forms.Label publisherLabel;
+        public System.Windows.Forms.Label isbnLabel;
+        public System.Windows.Forms.Label priceLbl;
     }
 }

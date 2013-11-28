@@ -54,19 +54,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="3BDataClasses.cs">
-      <DependentUpon>3BDataClasses.dbml</DependentUpon>
+    <Compile Include="admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="3BDataClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>3BDataClasses.dbml</DependentUpon>
+    <Compile Include="adminphone.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="author.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="book.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BookReview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BookReview.Designer.cs">
       <DependentUpon>BookReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bookstoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookstoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bookstoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookstoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ConfirmOrder.cs">
       <SubType>Form</SubType>
@@ -80,6 +97,20 @@
     <Compile Include="confirmOrderControl.Designer.cs">
       <DependentUpon>confirmOrderControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="creditcardtype.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProofOfPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +122,15 @@
     </Compile>
     <Compile Include="CUSTOMERREGISTRATION.Designer.cs">
       <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="review.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sale.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salesline.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ShoppingCart.cs">
       <SubType>Form</SubType>
@@ -130,15 +170,16 @@
     <Compile Include="shoppingCartControl.Designer.cs">
       <DependentUpon>shoppingCartControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShoppingCartData.cs" />
+    <Compile Include="state.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
-    <None Include="3BDataClasses.dbml.layout">
-      <DependentUpon>3BDataClasses.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="BookReview.resx">
       <DependentUpon>BookReview.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,10 +225,22 @@
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="3BDataClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>3BDataClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EntityDeploy Include="bookstoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bookstoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="bookstoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bookstoreModel.edmx</DependentUpon>
+      <LastGenOutput>bookstoreModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="bookstoreModel.edmx.diagram">
+      <DependentUpon>bookstoreModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>bookstoreModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

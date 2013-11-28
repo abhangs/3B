@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bookstoreModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="bookstoreModelStoreContainer">
+          <EntitySet Name="admin" EntityType="bookstoreModel.Store.admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="adminphone" EntityType="bookstoreModel.Store.adminphone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="authors" EntityType="bookstoreModel.Store.authors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="books" EntityType="bookstoreModel.Store.books" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="category" EntityType="bookstoreModel.Store.category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="creditcardtypes" EntityType="bookstoreModel.Store.creditcardtypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="customer" EntityType="bookstoreModel.Store.customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="orders" EntityType="bookstoreModel.Store.orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="reviews" EntityType="bookstoreModel.Store.reviews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sales" EntityType="bookstoreModel.Store.sales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="saleslines" EntityType="bookstoreModel.Store.saleslines" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="states" EntityType="bookstoreModel.Store.states" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pin" Type="varchar" MaxLength="50" />
+          <Property Name="fname" Type="varchar" MaxLength="50" />
+          <Property Name="lname" Type="varchar" MaxLength="50" />
+          <Property Name="hiredate" Type="date" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="zip" Type="varchar" MaxLength="20" />
+          <Property Name="isactive" Type="bit" />
+        </EntityType>
+        <EntityType Name="adminphone">
+          <Key>
+            <PropertyRef Name="admin" />
+            <PropertyRef Name="phonenumber" />
+          </Key>
+          <Property Name="admin" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="phonenumber" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="authors">
+          <Key>
+            <PropertyRef Name="fname" />
+            <PropertyRef Name="lname" />
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="fname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="minit" Type="varchar" MaxLength="10" />
+          <Property Name="lname" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="bookid" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="bookid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="varchar" MaxLength="300" />
+          <Property Name="publisher" Type="varchar" MaxLength="300" />
+          <Property Name="year" Type="smallint" />
+          <Property Name="categoryid" Type="smallint" />
+          <Property Name="price" Type="float" />
+          <Property Name="minquantity" Type="smallint" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="smallint" Nullable="false" />
+          <Property Name="categoryname" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="creditcardtypes">
+          <Key>
+            <PropertyRef Name="creditcardtypeid" />
+          </Key>
+          <Property Name="creditcardtypeid" Type="smallint" Nullable="false" />
+          <Property Name="creditcardtype" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pin" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fname" Type="varchar" MaxLength="50" />
+          <Property Name="lname" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="varchar" MaxLength="20" />
+          <Property Name="zip" Type="int" />
+          <Property Name="creditcardtype" Type="varchar" MaxLength="20" />
+          <Property Name="creditcardnumber" Type="int" />
+          <Property Name="expirydate" Type="date" />
+          <Property Name="categorylastsearched" Type="smallint" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="orderid" />
+          </Key>
+          <Property Name="orderid" Type="smallint" Nullable="false" />
+          <Property Name="quantity" Type="smallint" />
+          <Property Name="admin" Type="varchar" MaxLength="50" />
+          <Property Name="bookid" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="reviews">
+          <Key>
+            <PropertyRef Name="bookid" />
+            <PropertyRef Name="review" />
+          </Key>
+          <Property Name="bookid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="review" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sales">
+          <Key>
+            <PropertyRef Name="salesid" />
+          </Key>
+          <Property Name="salesid" Type="int" Nullable="false" />
+          <Property Name="customer" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="totalprice" Type="float" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="saleslines">
+          <Key>
+            <PropertyRef Name="salesid" />
+          </Key>
+          <Property Name="salesid" Type="int" Nullable="false" />
+          <Property Name="bookid" Type="varchar" MaxLength="50" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="price" Type="float" />
+        </EntityType>
+        <EntityType Name="states">
+          <Key>
+            <PropertyRef Name="stateabbr" />
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="stateabbr" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="statename" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bookstoreModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="bookstoreEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="bookstoreModel.admin" />
+          <EntitySet Name="adminphones" EntityType="bookstoreModel.adminphone" />
+          <EntitySet Name="authors" EntityType="bookstoreModel.author" />
+          <EntitySet Name="books" EntityType="bookstoreModel.book" />
+          <EntitySet Name="categories" EntityType="bookstoreModel.category" />
+          <EntitySet Name="creditcardtypes" EntityType="bookstoreModel.creditcardtype" />
+          <EntitySet Name="customers" EntityType="bookstoreModel.customer" />
+          <EntitySet Name="orders" EntityType="bookstoreModel.order" />
+          <EntitySet Name="reviews" EntityType="bookstoreModel.review" />
+          <EntitySet Name="sales" EntityType="bookstoreModel.sale" />
+          <EntitySet Name="saleslines" EntityType="bookstoreModel.salesline" />
+          <EntitySet Name="states" EntityType="bookstoreModel.state" />
+        </EntityContainer>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pin" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="hiredate" Type="DateTime" Precision="0" />
+          <Property Name="address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="zip" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="isactive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="adminphone">
+          <Key>
+            <PropertyRef Name="admin" />
+            <PropertyRef Name="phonenumber" />
+          </Key>
+          <Property Name="admin" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phonenumber" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="author">
+          <Key>
+            <PropertyRef Name="fname" />
+            <PropertyRef Name="lname" />
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="minit" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="bookid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="book">
+          <Key>
+            <PropertyRef Name="bookid" />
+          </Key>
+          <Property Name="bookid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="title" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="publisher" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="year" Type="Int16" />
+          <Property Name="categoryid" Type="Int16" />
+          <Property Name="price" Type="Double" />
+          <Property Name="minquantity" Type="Int16" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="Int16" Nullable="false" />
+          <Property Name="categoryname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="creditcardtype">
+          <Key>
+            <PropertyRef Name="creditcardtypeid" />
+          </Key>
+          <Property Name="creditcardtypeid" Type="Int16" Nullable="false" />
+          <Property Name="creditcardtype1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pin" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="zip" Type="Int32" />
+          <Property Name="creditcardtype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="creditcardnumber" Type="Int32" />
+          <Property Name="expirydate" Type="DateTime" Precision="0" />
+          <Property Name="categorylastsearched" Type="Int16" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="orderid" />
+          </Key>
+          <Property Name="orderid" Type="Int16" Nullable="false" />
+          <Property Name="quantity" Type="Int16" />
+          <Property Name="admin" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="bookid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="review">
+          <Key>
+            <PropertyRef Name="bookid" />
+            <PropertyRef Name="review1" />
+          </Key>
+          <Property Name="bookid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="review1" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sale">
+          <Key>
+            <PropertyRef Name="salesid" />
+          </Key>
+          <Property Name="salesid" Type="Int32" Nullable="false" />
+          <Property Name="customer" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="totalprice" Type="Double" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="salesline">
+          <Key>
+            <PropertyRef Name="salesid" />
+          </Key>
+          <Property Name="salesid" Type="Int32" Nullable="false" />
+          <Property Name="bookid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="price" Type="Double" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="stateabbr" />
+            <PropertyRef Name="statename" />
+          </Key>
+          <Property Name="stateabbr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="statename" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bookstoreModelStoreContainer" CdmEntityContainer="bookstoreEntities1">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="bookstoreModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="isactive" ColumnName="isactive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adminphones">
+            <EntityTypeMapping TypeName="bookstoreModel.adminphone">
+              <MappingFragment StoreEntitySet="adminphone">
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="authors">
+            <EntityTypeMapping TypeName="bookstoreModel.author">
+              <MappingFragment StoreEntitySet="authors">
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="minit" ColumnName="minit" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="bookstoreModel.book">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="publisher" ColumnName="publisher" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="minquantity" ColumnName="minquantity" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="bookstoreModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="creditcardtypes">
+            <EntityTypeMapping TypeName="bookstoreModel.creditcardtype">
+              <MappingFragment StoreEntitySet="creditcardtypes">
+                <ScalarProperty Name="creditcardtypeid" ColumnName="creditcardtypeid" />
+                <ScalarProperty Name="creditcardtype1" ColumnName="creditcardtype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="bookstoreModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="creditcardtype" ColumnName="creditcardtype" />
+                <ScalarProperty Name="creditcardnumber" ColumnName="creditcardnumber" />
+                <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+                <ScalarProperty Name="categorylastsearched" ColumnName="categorylastsearched" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="bookstoreModel.order">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reviews">
+            <EntityTypeMapping TypeName="bookstoreModel.review">
+              <MappingFragment StoreEntitySet="reviews">
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="review1" ColumnName="review" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sales">
+            <EntityTypeMapping TypeName="bookstoreModel.sale">
+              <MappingFragment StoreEntitySet="sales">
+                <ScalarProperty Name="salesid" ColumnName="salesid" />
+                <ScalarProperty Name="customer" ColumnName="customer" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saleslines">
+            <EntityTypeMapping TypeName="bookstoreModel.salesline">
+              <MappingFragment StoreEntitySet="saleslines">
+                <ScalarProperty Name="salesid" ColumnName="salesid" />
+                <ScalarProperty Name="bookid" ColumnName="bookid" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="states">
+            <EntityTypeMapping TypeName="bookstoreModel.state">
+              <MappingFragment StoreEntitySet="states">
+                <ScalarProperty Name="stateabbr" ColumnName="stateabbr" />
+                <ScalarProperty Name="statename" ColumnName="statename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

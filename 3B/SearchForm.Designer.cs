@@ -32,11 +32,11 @@
             this.searchInLbl = new System.Windows.Forms.Label();
             this.categoryLbl = new System.Windows.Forms.Label();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
-            this.searchInTxtBox = new System.Windows.Forms.TextBox();
             this.categoryCmbBox = new System.Windows.Forms.ComboBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.manageShpngCartBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.searchInLstBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // searchForLbl
@@ -77,15 +77,6 @@
             this.searchTxtBox.Size = new System.Drawing.Size(325, 27);
             this.searchTxtBox.TabIndex = 3;
             // 
-            // searchInTxtBox
-            // 
-            this.searchInTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchInTxtBox.Location = new System.Drawing.Point(143, 84);
-            this.searchInTxtBox.Multiline = true;
-            this.searchInTxtBox.Name = "searchInTxtBox";
-            this.searchInTxtBox.Size = new System.Drawing.Size(325, 126);
-            this.searchInTxtBox.TabIndex = 4;
-            // 
             // categoryCmbBox
             // 
             this.categoryCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +95,7 @@
             this.searchBtn.TabIndex = 6;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // manageShpngCartBtn
             // 
@@ -125,22 +117,32 @@
             this.exitBtn.Text = "EXIT 3-B.com";
             this.exitBtn.UseVisualStyleBackColor = true;
             // 
+            // searchInLstBox
+            // 
+            this.searchInLstBox.FormattingEnabled = true;
+            this.searchInLstBox.ItemHeight = 16;
+            this.searchInLstBox.Location = new System.Drawing.Point(143, 94);
+            this.searchInLstBox.Name = "searchInLstBox";
+            this.searchInLstBox.Size = new System.Drawing.Size(325, 116);
+            this.searchInLstBox.TabIndex = 9;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 297);
+            this.Controls.Add(this.searchInLstBox);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.manageShpngCartBtn);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.categoryCmbBox);
-            this.Controls.Add(this.searchInTxtBox);
             this.Controls.Add(this.searchTxtBox);
             this.Controls.Add(this.categoryLbl);
             this.Controls.Add(this.searchInLbl);
             this.Controls.Add(this.searchForLbl);
             this.Name = "SearchForm";
             this.Text = "SEARCH -3-B.com";
+            this.Load += new System.EventHandler(this.SearchForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,10 +154,10 @@
         private System.Windows.Forms.Label searchInLbl;
         private System.Windows.Forms.Label categoryLbl;
         private System.Windows.Forms.TextBox searchTxtBox;
-        private System.Windows.Forms.TextBox searchInTxtBox;
         private System.Windows.Forms.ComboBox categoryCmbBox;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button manageShpngCartBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.ListBox searchInLstBox;
     }
 }

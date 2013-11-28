@@ -32,5 +32,15 @@ namespace _3B.Properties {
                 return ((string)(this["DataSourceConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BUNKMASTER-PC;Initial Catalog=bookstore;Integrated Security=True")]
+        public string bookstoreConnectionString {
+            get {
+                return ((string)(this["bookstoreConnectionString"]));
+            }
+        }
     }
 }

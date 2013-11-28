@@ -20,6 +20,30 @@ namespace _3B
         private void enterBtn_Click(object sender, EventArgs e)
         {
             
+            if (searchRadioButton.Checked)
+            {
+                SearchForm searchForm = new SearchForm();
+                searchForm.Visible = true;
+                this.Hide();
+            }
+
+            else if (newCustRadioButton.Checked)
+            {
+                custRegisterForm custRegisterForm = new custRegisterForm();
+                custRegisterForm.Visible = true;
+                this.Hide();
+            }
+
+            else if (returnCustRadioBox.Checked)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+                this.Hide();
+            }
+
+
         }
+
+        
     }
 }
