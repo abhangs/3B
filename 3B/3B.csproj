@@ -103,13 +103,43 @@
     <Compile Include="customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHome.Designer.cs">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertNewBook.Designer.cs">
+      <DependentUpon>InsertNewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBookstoreCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBookstoreCatalog.Designer.cs">
+      <DependentUpon>ManageBookstoreCatalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModifyDeleteBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyDeleteBooks.Designer.cs">
+      <DependentUpon>ModifyDeleteBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlacingOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlacingOrders.Designer.cs">
+      <DependentUpon>PlacingOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="ProofOfPurchase.cs">
       <SubType>Form</SubType>
@@ -122,6 +152,12 @@
     </Compile>
     <Compile Include="CUSTOMERREGISTRATION.Designer.cs">
       <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportMenu.Designer.cs">
+      <DependentUpon>ReportMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="review.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -174,6 +210,18 @@
     <Compile Include="state.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAdminProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAdminProfile.Designer.cs">
+      <DependentUpon>UpdateAdminProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateBook.Designer.cs">
+      <DependentUpon>UpdateBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,11 +237,29 @@
     <EmbeddedResource Include="confirmOrderControl.resx">
       <DependentUpon>confirmOrderControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminHome.resx">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertNewBook.resx">
+      <DependentUpon>InsertNewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBookstoreCatalog.resx">
+      <DependentUpon>ManageBookstoreCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyDeleteBooks.resx">
+      <DependentUpon>ModifyDeleteBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlacingOrders.resx">
+      <DependentUpon>PlacingOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProofOfPurchase.resx">
       <DependentUpon>ProofOfPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CUSTOMERREGISTRATION.resx">
       <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMenu.resx">
+      <DependentUpon>ReportMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShoppingCart.resx">
       <DependentUpon>ShoppingCart.cs</DependentUpon>
@@ -221,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="shoppingCartControl.resx">
       <DependentUpon>shoppingCartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAdminProfile.resx">
+      <DependentUpon>UpdateAdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateBook.resx">
+      <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
