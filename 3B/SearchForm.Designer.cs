@@ -106,6 +106,7 @@
             this.manageShpngCartBtn.TabIndex = 7;
             this.manageShpngCartBtn.Text = "Manage Shopping Cart";
             this.manageShpngCartBtn.UseVisualStyleBackColor = true;
+            this.manageShpngCartBtn.Click += new System.EventHandler(this.manageShpngCartBtn_Click);
             // 
             // exitBtn
             // 
@@ -116,6 +117,7 @@
             this.exitBtn.TabIndex = 8;
             this.exitBtn.Text = "EXIT 3-B.com";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // searchInLstBox
             // 

@@ -40,7 +40,6 @@
             this.cardNumberTxtBox = new System.Windows.Forms.TextBox();
             this.cardTypeCmbBox = new System.Windows.Forms.ComboBox();
             this.newCardRadioBtn = new System.Windows.Forms.RadioButton();
-           // this.label22 = new System.Windows.Forms.Label();
             this.useCreditCardRadioBtn = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,8 +56,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
-            this.newSearchBtn = new System.Windows.Forms.Button();
+            this.s = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.creditCardLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -151,10 +151,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.creditCardLabel);
             this.panel2.Controls.Add(this.cardNumberTxtBox);
             this.panel2.Controls.Add(this.cardTypeCmbBox);
             this.panel2.Controls.Add(this.newCardRadioBtn);
-           // this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.useCreditCardRadioBtn);
             this.panel2.Location = new System.Drawing.Point(365, 55);
             this.panel2.Name = "panel2";
@@ -189,16 +189,7 @@
             this.newCardRadioBtn.TabStop = true;
             this.newCardRadioBtn.Text = "New Credit Card";
             this.newCardRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // cardInfoLbl
-            // 
-            //this.label22.AutoSize = true;
-            //this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label22.Location = new System.Drawing.Point(35, 76);
-            //this.label22.Name = "cardInfoLbl";
-            //this.label22.Size = new System.Drawing.Size(77, 20);
-            //this.label22.TabIndex = 7;
-            //this.label22.Text = "Card Info";
+            this.newCardRadioBtn.CheckedChanged += new System.EventHandler(this.newCardRadioBtn_CheckedChanged);
             // 
             // useCreditCardRadioBtn
             // 
@@ -356,31 +347,43 @@
             this.printBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printBtn.Location = new System.Drawing.Point(87, 703);
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(75, 32);
+            this.printBtn.Size = new System.Drawing.Size(88, 43);
             this.printBtn.TabIndex = 7;
-            this.printBtn.Text = "Print";
+            this.printBtn.Text = "Cancel";
             this.printBtn.UseVisualStyleBackColor = true;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
-            // newSearchBtn
+            // s
             // 
-            this.newSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newSearchBtn.Location = new System.Drawing.Point(250, 703);
-            this.newSearchBtn.Name = "newSearchBtn";
-            this.newSearchBtn.Size = new System.Drawing.Size(141, 32);
-            this.newSearchBtn.TabIndex = 8;
-            this.newSearchBtn.Text = "New Search";
-            this.newSearchBtn.UseVisualStyleBackColor = true;
+            this.s.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.s.Location = new System.Drawing.Point(250, 703);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(238, 43);
+            this.s.TabIndex = 8;
+            this.s.Text = "Update Customer Profile";
+            this.s.UseVisualStyleBackColor = true;
+            this.s.Click += new System.EventHandler(this.UpdateCustBtnClick);
             // 
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(494, 703);
+            this.exitBtn.Location = new System.Drawing.Point(552, 703);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exitBtn.Size = new System.Drawing.Size(141, 32);
+            this.exitBtn.Size = new System.Drawing.Size(141, 43);
             this.exitBtn.TabIndex = 9;
-            this.exitBtn.Text = "Exit 3-B.com";
+            this.exitBtn.Text = "Buy IT!";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // creditCardLabel
+            // 
+            this.creditCardLabel.AutoSize = true;
+            this.creditCardLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditCardLabel.Location = new System.Drawing.Point(39, 76);
+            this.creditCardLabel.Name = "creditCardLabel";
+            this.creditCardLabel.Size = new System.Drawing.Size(0, 20);
+            this.creditCardLabel.TabIndex = 11;
             // 
             // ConfirmOrder
             // 
@@ -388,7 +391,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 758);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.newSearchBtn);
+            this.Controls.Add(this.s);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -401,6 +404,7 @@
             this.MaximizeBox = false;
             this.Name = "ConfirmOrder";
             this.Text = "Confirm Order - 3-B.com";
+            this.Load += new System.EventHandler(this.ConfirmOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -446,7 +450,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button printBtn;
-        private System.Windows.Forms.Button newSearchBtn;
+        private System.Windows.Forms.Button s;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label creditCardLabel;
     }
 }

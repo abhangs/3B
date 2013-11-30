@@ -68,7 +68,7 @@
             // usernameTxtBox
             // 
             this.usernameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxtBox.Location = new System.Drawing.Point(165, 12);
+            this.usernameTxtBox.Location = new System.Drawing.Point(166, 12);
             this.usernameTxtBox.Name = "usernameTxtBox";
             this.usernameTxtBox.Size = new System.Drawing.Size(265, 27);
             this.usernameTxtBox.TabIndex = 1;
@@ -86,7 +86,7 @@
             // pinTxtBox
             // 
             this.pinTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pinTxtBox.Location = new System.Drawing.Point(165, 48);
+            this.pinTxtBox.Location = new System.Drawing.Point(167, 48);
             this.pinTxtBox.Name = "pinTxtBox";
             this.pinTxtBox.Size = new System.Drawing.Size(120, 27);
             this.pinTxtBox.TabIndex = 3;
@@ -122,7 +122,7 @@
             // fNameTxtBox
             // 
             this.fNameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fNameTxtBox.Location = new System.Drawing.Point(165, 84);
+            this.fNameTxtBox.Location = new System.Drawing.Point(168, 84);
             this.fNameTxtBox.Name = "fNameTxtBox";
             this.fNameTxtBox.Size = new System.Drawing.Size(265, 27);
             this.fNameTxtBox.TabIndex = 7;
@@ -130,7 +130,7 @@
             // lNameTxtBox
             // 
             this.lNameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNameTxtBox.Location = new System.Drawing.Point(165, 117);
+            this.lNameTxtBox.Location = new System.Drawing.Point(168, 117);
             this.lNameTxtBox.Name = "lNameTxtBox";
             this.lNameTxtBox.Size = new System.Drawing.Size(265, 27);
             this.lNameTxtBox.TabIndex = 9;
@@ -148,7 +148,7 @@
             // addressTxtBox
             // 
             this.addressTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxtBox.Location = new System.Drawing.Point(165, 150);
+            this.addressTxtBox.Location = new System.Drawing.Point(168, 150);
             this.addressTxtBox.Name = "addressTxtBox";
             this.addressTxtBox.Size = new System.Drawing.Size(265, 27);
             this.addressTxtBox.TabIndex = 11;
@@ -166,7 +166,7 @@
             // cityTxtBox
             // 
             this.cityTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityTxtBox.Location = new System.Drawing.Point(165, 183);
+            this.cityTxtBox.Location = new System.Drawing.Point(168, 183);
             this.cityTxtBox.Name = "cityTxtBox";
             this.cityTxtBox.Size = new System.Drawing.Size(265, 27);
             this.cityTxtBox.TabIndex = 13;
@@ -185,7 +185,7 @@
             // zipTxtBox
             // 
             this.zipTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zipTxtBox.Location = new System.Drawing.Point(310, 221);
+            this.zipTxtBox.Location = new System.Drawing.Point(312, 221);
             this.zipTxtBox.Name = "zipTxtBox";
             this.zipTxtBox.Size = new System.Drawing.Size(120, 27);
             this.zipTxtBox.TabIndex = 15;
@@ -194,7 +194,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(267, 224);
+            this.label8.Location = new System.Drawing.Point(269, 224);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 14;
@@ -214,7 +214,7 @@
             // 
             this.stateCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stateCmbBox.FormattingEnabled = true;
-            this.stateCmbBox.Location = new System.Drawing.Point(165, 220);
+            this.stateCmbBox.Location = new System.Drawing.Point(167, 220);
             this.stateCmbBox.Name = "stateCmbBox";
             this.stateCmbBox.Size = new System.Drawing.Size(97, 28);
             this.stateCmbBox.TabIndex = 17;
@@ -232,7 +232,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(41, 264);
+            this.label10.Location = new System.Drawing.Point(52, 264);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 20);
             this.label10.TabIndex = 18;
@@ -243,7 +243,7 @@
             this.cardNumberTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cardNumberTxtBox.Location = new System.Drawing.Point(271, 262);
             this.cardNumberTxtBox.Name = "cardNumberTxtBox";
-            this.cardNumberTxtBox.Size = new System.Drawing.Size(159, 27);
+            this.cardNumberTxtBox.Size = new System.Drawing.Size(190, 27);
             this.cardNumberTxtBox.TabIndex = 20;
             this.cardNumberTxtBox.Text = "Credit Card Number";
             // 
@@ -275,6 +275,7 @@
             this.btnRegister.TabIndex = 23;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnDontRegister
             // 
@@ -285,6 +286,7 @@
             this.btnDontRegister.TabIndex = 24;
             this.btnDontRegister.Text = "Dont Register";
             this.btnDontRegister.UseVisualStyleBackColor = true;
+            this.btnDontRegister.Click += new System.EventHandler(this.btnDontRegister_Click);
             // 
             // custRegisterForm
             // 
@@ -319,6 +321,7 @@
             this.MaximizeBox = false;
             this.Name = "custRegisterForm";
             this.Text = "CUSTOMER REGISTRATION - 3-B.com";
+            this.Load += new System.EventHandler(this.custRegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +330,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox usernameTxtBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox pinTxtBox;
         private System.Windows.Forms.Label label3;
@@ -349,7 +351,8 @@
         private System.Windows.Forms.TextBox cardNumberTxtBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox cardExpTxtBox;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnDontRegister;
+        public System.Windows.Forms.TextBox usernameTxtBox;
+        public System.Windows.Forms.Button btnRegister;
+        public System.Windows.Forms.Button btnDontRegister;
     }
 }

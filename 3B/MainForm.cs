@@ -22,7 +22,7 @@ namespace _3B
             
             if (searchRadioButton.Checked)
             {
-                SearchForm searchForm = new SearchForm();
+                SearchForm searchForm = SearchForm.getInstance();
                 searchForm.Visible = true;
                 this.Hide();
             }
@@ -37,7 +37,7 @@ namespace _3B
             else if (returnCustRadioBox.Checked)
             {
                 UserLogin userLogin = new UserLogin();
-                userLogin.Show();
+                userLogin.ShowDialog();
                 this.Hide();
             }
 

@@ -37,6 +37,14 @@
             this.customerNameLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cardInfoLbl = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.dateLbl = new System.Windows.Forms.Label();
+            this.userIDLbl = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,20 +63,12 @@
             this.printBtn = new System.Windows.Forms.Button();
             this.newSearchBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.userIDLbl = new System.Windows.Forms.Label();
-            this.dateLbl = new System.Windows.Forms.Label();
-            this.timeLbl = new System.Windows.Forms.Label();
-            this.cardInfoLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -163,6 +163,90 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(393, 162);
             this.panel2.TabIndex = 2;
+            // 
+            // cardInfoLbl
+            // 
+            this.cardInfoLbl.AutoSize = true;
+            this.cardInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardInfoLbl.Location = new System.Drawing.Point(120, 132);
+            this.cardInfoLbl.Name = "cardInfoLbl";
+            this.cardInfoLbl.Size = new System.Drawing.Size(77, 20);
+            this.cardInfoLbl.TabIndex = 14;
+            this.cardInfoLbl.Text = "Card Info";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel6.Controls.Add(this.timeLbl);
+            this.panel6.Controls.Add(this.dateLbl);
+            this.panel6.Controls.Add(this.userIDLbl);
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Location = new System.Drawing.Point(107, 12);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(245, 80);
+            this.panel6.TabIndex = 8;
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.Location = new System.Drawing.Point(88, 41);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(46, 20);
+            this.timeLbl.TabIndex = 13;
+            this.timeLbl.Text = "Time";
+            // 
+            // dateLbl
+            // 
+            this.dateLbl.AutoSize = true;
+            this.dateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLbl.Location = new System.Drawing.Point(88, 21);
+            this.dateLbl.Name = "dateLbl";
+            this.dateLbl.Size = new System.Drawing.Size(45, 20);
+            this.dateLbl.TabIndex = 12;
+            this.dateLbl.Text = "Date";
+            // 
+            // userIDLbl
+            // 
+            this.userIDLbl.AutoSize = true;
+            this.userIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDLbl.Location = new System.Drawing.Point(88, 1);
+            this.userIDLbl.Name = "userIDLbl";
+            this.userIDLbl.Size = new System.Drawing.Size(67, 20);
+            this.userIDLbl.TabIndex = 9;
+            this.userIDLbl.Text = "User ID";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(28, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 20);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Time: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(28, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 20);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Date: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "User ID: ";
             // 
             // label22
             // 
@@ -332,6 +416,7 @@
             this.newSearchBtn.TabIndex = 8;
             this.newSearchBtn.Text = "New Search";
             this.newSearchBtn.UseVisualStyleBackColor = true;
+            this.newSearchBtn.Click += new System.EventHandler(this.newSearchBtn_Click);
             // 
             // exitBtn
             // 
@@ -343,92 +428,9 @@
             this.exitBtn.TabIndex = 9;
             this.exitBtn.Text = "Exit 3-B.com";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel6.Controls.Add(this.timeLbl);
-            this.panel6.Controls.Add(this.dateLbl);
-            this.panel6.Controls.Add(this.userIDLbl);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(107, 12);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(245, 80);
-            this.panel6.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "User ID: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(28, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 20);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Date: ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(28, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 20);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Time: ";
-            // 
-            // userIDLbl
-            // 
-            this.userIDLbl.AutoSize = true;
-            this.userIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIDLbl.Location = new System.Drawing.Point(88, 1);
-            this.userIDLbl.Name = "userIDLbl";
-            this.userIDLbl.Size = new System.Drawing.Size(77, 20);
-            this.userIDLbl.TabIndex = 9;
-            this.userIDLbl.Text = "Card Info";
-            // 
-            // dateLbl
-            // 
-            this.dateLbl.AutoSize = true;
-            this.dateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLbl.Location = new System.Drawing.Point(88, 21);
-            this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(77, 20);
-            this.dateLbl.TabIndex = 12;
-            this.dateLbl.Text = "Card Info";
-            // 
-            // timeLbl
-            // 
-            this.timeLbl.AutoSize = true;
-            this.timeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLbl.Location = new System.Drawing.Point(88, 41);
-            this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(77, 20);
-            this.timeLbl.TabIndex = 13;
-            this.timeLbl.Text = "Card Info";
-            // 
-            // cardInfoLbl
-            // 
-            this.cardInfoLbl.AutoSize = true;
-            this.cardInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cardInfoLbl.Location = new System.Drawing.Point(120, 132);
-            this.cardInfoLbl.Name = "cardInfoLbl";
-            this.cardInfoLbl.Size = new System.Drawing.Size(77, 20);
-            this.cardInfoLbl.TabIndex = 14;
-            this.cardInfoLbl.Text = "Card Info";
-            // 
-            // ConfirmOrder
+            // ProofOfPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -445,19 +447,20 @@
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MaximizeBox = false;
-            this.Name = "ConfirmOrder";
+            this.Name = "ProofOfPurchase";
             this.Text = "Confirm Order - 3-B.com";
+            this.Load += new System.EventHandler(this.ProofOfPurchase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

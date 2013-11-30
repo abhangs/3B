@@ -95,7 +95,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label bookLabel;
-        private System.Windows.Forms.Panel reviewPanel;
+        public System.Windows.Forms.Label bookLabel;
+        public System.Windows.Forms.Panel reviewPanel;
     }
 }

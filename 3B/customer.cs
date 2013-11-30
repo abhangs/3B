@@ -23,8 +23,8 @@ namespace _3B
         public string state { get; set; }
         public Nullable<int> zip { get; set; }
         public string creditcardtype { get; set; }
-        public Nullable<int> creditcardnumber { get; set; }
-        public Nullable<System.DateTime> expirydate { get; set; }
+        public string creditcardnumber { get; set; }
+        public string expirydate { get; set; }
         public Nullable<short> categorylastsearched { get; set; }
     }
 }

@@ -69,26 +69,29 @@
             this.manageCartBtn.TabIndex = 1;
             this.manageCartBtn.Text = "Manage Shopping Cart";
             this.manageCartBtn.UseVisualStyleBackColor = true;
+            this.manageCartBtn.Click += new System.EventHandler(this.manageCartBtn_Click);
             // 
             // checkoutBtn
             // 
             this.checkoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkoutBtn.Location = new System.Drawing.Point(12, 314);
             this.checkoutBtn.Name = "checkoutBtn";
-            this.checkoutBtn.Size = new System.Drawing.Size(220, 45);
+            this.checkoutBtn.Size = new System.Drawing.Size(262, 45);
             this.checkoutBtn.TabIndex = 2;
             this.checkoutBtn.Text = "Proceed to Checkout";
             this.checkoutBtn.UseVisualStyleBackColor = true;
+            this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
             // newSearchBtn
             // 
             this.newSearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newSearchBtn.Location = new System.Drawing.Point(280, 314);
+            this.newSearchBtn.Location = new System.Drawing.Point(298, 314);
             this.newSearchBtn.Name = "newSearchBtn";
             this.newSearchBtn.Size = new System.Drawing.Size(220, 45);
             this.newSearchBtn.TabIndex = 3;
             this.newSearchBtn.Text = "New Search";
             this.newSearchBtn.UseVisualStyleBackColor = true;
+            this.newSearchBtn.Click += new System.EventHandler(this.newSearchBtn_Click);
             // 
             // exitBtn
             // 
@@ -99,6 +102,7 @@
             this.exitBtn.TabIndex = 4;
             this.exitBtn.Text = "EXIT 3-B.Com";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // searchResultPanel
             // 
@@ -121,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 371);
+            this.ClientSize = new System.Drawing.Size(786, 384);
             this.Controls.Add(this.searchResultPanel);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newSearchBtn);

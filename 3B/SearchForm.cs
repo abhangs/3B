@@ -13,7 +13,16 @@ namespace _3B
     public partial class SearchForm : Form
     {
         bookstoreEntities1 bookEntity;
-        
+
+        public static SearchForm INSTANCE;
+
+        public static SearchForm getInstance()
+        {
+            if (INSTANCE == null)
+                INSTANCE = new SearchForm();
+            return INSTANCE;
+        }
+
         public SearchForm()
         {
             InitializeComponent();
@@ -28,7 +37,7 @@ namespace _3B
             this.searchInLstBox.Items.Add("Author");
             this.searchInLstBox.Items.Add("Publisher");
             this.searchInLstBox.Items.Add("ISBN");
-            
+
 
             var categories = from c in bookEntity.categories select c.categoryname;
 
@@ -43,7 +52,7 @@ namespace _3B
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            SearchResult searchResult = new SearchResult();
+            SearchResult searchResult = SearchResult.getInstance();
 
             try
             {
@@ -58,13 +67,15 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        searchResultControl searchResultControl = new searchResultControl();
+                        var searchResultControl = new searchResultControl();
                         searchResultControl.bookLbl.Text = b.title;
-                        var author =  (from a in bookEntity.authors where a.bookid == b.bookid select a.fname + a.lname);
-                        searchResultControl.byLabel.Text = author.FirstOrDefault();
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                searchResultControl.byLabel.Text = searchResultControl.byLabel.Text + " " + a.fname + a.lname;
                         searchResultControl.publisherLabel.Text = b.publisher;
                         searchResultControl.isbnLabel.Text = b.bookid;
                         searchResultControl.priceLbl.Text = "$" + b.price;
+                        searchResultControl.BookItem = b;
                         searchResult.panel1.Controls.Add(searchResultControl);
 
                     }
@@ -76,12 +87,113 @@ namespace _3B
                 {
                     var category = categoryCmbBox.SelectedItem.ToString();
                     var categoryID = from s in bookEntity.categories where s.categoryname == category select s.categoryid;
-                    var author = searchTxtBox.Text;
-                    var bookIdList = from a in bookEntity.authors where (a.fname + a.lname).Contains(author) select a.bookid;
+                    var author1 = searchTxtBox.Text;
+                    var bookIdList = from a in bookEntity.authors where (a.fname + a.lname).Contains(author1) select a.bookid;
 
+                    var result = from b in bookEntity.books where bookIdList.Contains(b.bookid) && b.categoryid == categoryID.FirstOrDefault() select b;
+
+                    foreach (book b in result)
+                    {
+                        var searchResultControl = new searchResultControl();
+                        searchResultControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if(authorList.FirstOrDefault()!=null)foreach(author a in authorList)
+                        searchResultControl.byLabel.Text =  searchResultControl.byLabel.Text + " " + a.fname + a.lname;
+                        searchResultControl.publisherLabel.Text = b.publisher;
+                        searchResultControl.isbnLabel.Text = b.bookid;
+                        searchResultControl.priceLbl.Text = "$" + b.price;
+                        searchResultControl.BookItem = b;
+                        searchResult.panel1.Controls.Add(searchResultControl);
+
+                    }
 
                 }
 
+                if (searchInLstBox.SelectedItem.ToString().ToLower().Equals("publisher"))
+                {
+                    var category = categoryCmbBox.SelectedItem.ToString();
+                    var categoryID = from s in bookEntity.categories where s.categoryname == category select s.categoryid;
+                    var publisher = searchTxtBox.Text;
+                    var result = from b in bookEntity.books where b.publisher.Contains(publisher) && b.categoryid == categoryID.FirstOrDefault() select b;
+
+                    foreach (book b in result)
+                    {
+                        var searchResultControl = new searchResultControl();
+                        searchResultControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if(authorList.FirstOrDefault() != null) foreach(author a in authorList)
+                        searchResultControl.byLabel.Text =  searchResultControl.byLabel.Text + " " + a.fname + a.lname;
+                        searchResultControl.publisherLabel.Text = b.publisher;
+                        searchResultControl.isbnLabel.Text = b.bookid;
+                        searchResultControl.priceLbl.Text = "$" + b.price;
+                        searchResultControl.BookItem = b;
+                        searchResult.panel1.Controls.Add(searchResultControl);
+
+                    }
+                    
+                }
+
+                if (searchInLstBox.SelectedItem.ToString().ToLower().Equals("isbn"))
+                {
+                    var category = categoryCmbBox.SelectedItem.ToString();
+                    var categoryID = from s in bookEntity.categories where s.categoryname == category select s.categoryid;
+                    var isbn = searchTxtBox.Text;
+                    var result = from b in bookEntity.books where b.bookid.Contains(isbn) && b.categoryid == categoryID.FirstOrDefault() select b;
+
+                    foreach (book b in result)
+                    {
+                        var searchResultControl = new searchResultControl();
+                        searchResultControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if(authorList.FirstOrDefault()!=null) foreach(author a in authorList)
+                        searchResultControl.byLabel.Text =  searchResultControl.byLabel.Text + " " + a.fname + a.lname;
+                         searchResultControl.publisherLabel.Text = b.publisher;
+                        searchResultControl.isbnLabel.Text = b.bookid;
+                        searchResultControl.priceLbl.Text = "$" + b.price;
+                        searchResultControl.BookItem = b;
+                        searchResult.panel1.Controls.Add(searchResultControl);
+
+                    }
+                }
+
+                if (searchInLstBox.SelectedItem.ToString().ToLower().Equals("keyword anywhere"))
+                {
+                    var category = categoryCmbBox.SelectedItem.ToString();
+                    var categoryID = from s in bookEntity.categories where s.categoryname == category select s.categoryid;
+
+                    var title = searchTxtBox.Text;
+
+                    var author1 = searchTxtBox.Text;
+                    var bookIdList = from a in bookEntity.authors where (a.fname + a.lname).Contains(author1) select a.bookid;
+
+                    var publisher = searchTxtBox.Text;
+
+                    var isbn = searchTxtBox.Text;
+
+                    var result = from b in bookEntity.books
+                                 where b.title.Contains(title) || bookIdList.Contains(b.bookid)
+                                     || b.publisher.Contains(publisher) || b.bookid.Contains(isbn) && b.categoryid == categoryID.FirstOrDefault()
+                                 select b;
+
+                    foreach (book b in result)
+                    {
+                        var searchResultControl = new searchResultControl();
+                        searchResultControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if(authorList.FirstOrDefault()!=null)foreach(author a in authorList)
+                        searchResultControl.byLabel.Text =  searchResultControl.byLabel.Text + " " + a.fname + a.lname;
+                         searchResultControl.publisherLabel.Text = b.publisher;
+                        searchResultControl.isbnLabel.Text = b.bookid;
+                        searchResultControl.priceLbl.Text = "$" + b.price;
+                        searchResultControl.BookItem = b;
+                        searchResult.panel1.Controls.Add(searchResultControl);
+
+                    } 
+
+                    
+                }
+
+                ShoppingCartData.getInstance().LastCategorySearched = categoryCmbBox.SelectedItem.ToString();
                 searchResult.Show();
                 this.Hide();
 
@@ -97,6 +209,18 @@ namespace _3B
 
         }
 
-       
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void manageShpngCartBtn_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = ShoppingCart.getInstance();
+            shoppingCart.Show();
+            this.Hide();
+        }
+
+
     }
 }

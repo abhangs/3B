@@ -69,6 +69,7 @@
             this.pinTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pinTxt.Location = new System.Drawing.Point(123, 51);
             this.pinTxt.Name = "pinTxt";
+            this.pinTxt.PasswordChar = '*';
             this.pinTxt.Size = new System.Drawing.Size(178, 24);
             this.pinTxt.TabIndex = 3;
             // 
@@ -81,6 +82,7 @@
             this.LoginBtn.TabIndex = 4;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // cancelBtn
             // 

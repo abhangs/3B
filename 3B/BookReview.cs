@@ -16,5 +16,17 @@ namespace _3B
         {
             InitializeComponent();
         }
+
+        public static BookReview INSTANCE;
+
+        public static BookReview getInstance()
+        {
+            if (INSTANCE == null)
+            {
+                INSTANCE = new BookReview();
+            }
+            return INSTANCE;
+        }
+
     }
 }

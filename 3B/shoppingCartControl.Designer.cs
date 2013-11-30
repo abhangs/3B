@@ -46,6 +46,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Delete Item";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // bookLabel
             // 
@@ -105,6 +106,7 @@
             this.textBox1.Size = new System.Drawing.Size(36, 27);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // quantityPriceLabel
             // 
@@ -130,6 +132,7 @@
             this.Controls.Add(this.btnDelete);
             this.Name = "shoppingCartControl";
             this.Size = new System.Drawing.Size(694, 87);
+            this.Load += new System.EventHandler(this.shoppingCartControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,12 +141,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label bookLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label quantityPriceLabel;
+        public System.Windows.Forms.Label bookLabel;
+        public System.Windows.Forms.Label authorLabel;
+        public System.Windows.Forms.Label priceLabel;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label quantityPriceLabel;
     }
 }
