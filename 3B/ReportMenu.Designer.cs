@@ -31,15 +31,13 @@
             this.first = new System.Windows.Forms.RadioButton();
             this.second = new System.Windows.Forms.RadioButton();
             this.third = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.fourth = new System.Windows.Forms.RadioButton();
+            this.fifth = new System.Windows.Forms.RadioButton();
             this.printButton = new System.Windows.Forms.Button();
             this.doneButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButtons = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,71 +78,34 @@
     "";
             this.third.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // fourth
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(75, 229);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(703, 29);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "List of the most expensive books for each book category in descending order.";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.fourth.AutoSize = true;
+            this.fourth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourth.Location = new System.Drawing.Point(75, 229);
+            this.fourth.Name = "fourth";
+            this.fourth.Size = new System.Drawing.Size(703, 29);
+            this.fourth.TabIndex = 3;
+            this.fourth.TabStop = true;
+            this.fourth.Text = "List of the most expensive books for each book category in descending order.";
+            this.fourth.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // fifth
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(75, 279);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(603, 29);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Total number of distinct buyers for each category in the last month";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(75, 328);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(371, 29);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Average amount of sales per customer";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(75, 376);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(480, 29);
-            this.radioButton4.TabIndex = 6;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Average number of books per purchase transaction";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(75, 429);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(368, 29);
-            this.radioButton5.TabIndex = 7;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Average number of customers per day";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.fifth.AutoSize = true;
+            this.fifth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fifth.Location = new System.Drawing.Point(75, 284);
+            this.fifth.Name = "fifth";
+            this.fifth.Size = new System.Drawing.Size(603, 29);
+            this.fifth.TabIndex = 4;
+            this.fifth.TabStop = true;
+            this.fifth.Text = "Total number of distinct buyers for each category in the last month";
+            this.fifth.UseVisualStyleBackColor = true;
             // 
             // printButton
             // 
             this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printButton.Location = new System.Drawing.Point(255, 579);
+            this.printButton.Location = new System.Drawing.Point(235, 496);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(121, 51);
             this.printButton.TabIndex = 8;
@@ -155,7 +116,7 @@
             // doneButton
             // 
             this.doneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneButton.Location = new System.Drawing.Point(480, 579);
+            this.doneButton.Location = new System.Drawing.Point(516, 496);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(121, 51);
             this.doneButton.TabIndex = 9;
@@ -176,30 +137,41 @@
             // 
             // radioButtons
             // 
+            this.radioButtons.Controls.Add(this.radioButton1);
             this.radioButtons.Controls.Add(this.first);
             this.radioButtons.Controls.Add(this.second);
             this.radioButtons.Controls.Add(this.third);
-            this.radioButtons.Controls.Add(this.radioButton1);
-            this.radioButtons.Controls.Add(this.radioButton5);
-            this.radioButtons.Controls.Add(this.radioButton2);
-            this.radioButtons.Controls.Add(this.radioButton4);
-            this.radioButtons.Controls.Add(this.radioButton3);
+            this.radioButtons.Controls.Add(this.fourth);
+            this.radioButtons.Controls.Add(this.fifth);
             this.radioButtons.Location = new System.Drawing.Point(35, 63);
             this.radioButtons.Name = "radioButtons";
-            this.radioButtons.Size = new System.Drawing.Size(813, 482);
+            this.radioButtons.Size = new System.Drawing.Size(813, 413);
             this.radioButtons.TabIndex = 11;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(75, 336);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(182, 29);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Statistical Report";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // ReportMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 700);
+            this.ClientSize = new System.Drawing.Size(895, 594);
             this.Controls.Add(this.radioButtons);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.doneButton);
             this.Controls.Add(this.printButton);
             this.Name = "ReportMenu";
             this.Text = "Report Menu 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportMenu_FormClosing);
             this.radioButtons.ResumeLayout(false);
             this.radioButtons.PerformLayout();
             this.ResumeLayout(false);
@@ -212,14 +184,12 @@
         private System.Windows.Forms.RadioButton first;
         private System.Windows.Forms.RadioButton second;
         private System.Windows.Forms.RadioButton third;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton fourth;
+        private System.Windows.Forms.RadioButton fifth;
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel radioButtons;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

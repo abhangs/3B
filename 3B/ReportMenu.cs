@@ -24,7 +24,39 @@ namespace _3B
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (first.Checked)
+            {
+                Report1 rp = new Report1();
+                rp.Show();
+                this.Hide();
+            }
+            else if (second.Checked)
+            {
+                Report2 rp = new Report2();
+                rp.Show();
+                this.Hide();
+            }
+            else if (third.Checked)
+            {
 
+            }
+            else if (fourth.Checked)
+            {
+                Report4 rp = new Report4();
+                rp.Show();
+                this.Hide();
+            }
+            else if (fifth.Checked)
+            {
+
+            }
+            else if(radioButton1.Checked)
+            {
+                StatisticalReport sp = new StatisticalReport();
+                sp.Show();
+                this.Hide();
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,6 +69,11 @@ namespace _3B
             AdminHome ah = new AdminHome();
             ah.Show();
             this.Hide();
+        }
+
+        private void ReportMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

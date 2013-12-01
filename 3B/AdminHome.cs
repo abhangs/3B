@@ -42,12 +42,18 @@ namespace _3B
         {
             UpdateAdminProfile uap = new UpdateAdminProfile();
             uap.Show();
+            
             this.Hide();
         }
 
         private void systemMaintButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
        

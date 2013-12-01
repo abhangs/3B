@@ -35,6 +35,7 @@
             // 
             // insertButton
             // 
+            this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.Location = new System.Drawing.Point(109, 47);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(305, 54);
@@ -45,6 +46,7 @@
             // 
             // modifyDeleteButton
             // 
+            this.modifyDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifyDeleteButton.Location = new System.Drawing.Point(109, 134);
             this.modifyDeleteButton.Name = "modifyDeleteButton";
             this.modifyDeleteButton.Size = new System.Drawing.Size(305, 54);
@@ -55,6 +57,7 @@
             // 
             // backButton
             // 
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.Location = new System.Drawing.Point(109, 221);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(305, 54);
