@@ -36,12 +36,13 @@ namespace _3B
 
         public void GetTotalItems()
         {
-            this.currentItemCountLbl.Text = "Your Shopping Cart has " + ShoppingCartData.getInstance().BookLsListings.Count;
+            this.currentItemCountLbl.Text = "Your Shopping Cart has " + ShoppingCartData.getInstance().BookLsListings.Count + " items";
         }
 
         private void newSearchBtn_Click(object sender, EventArgs e)
         {
-            SearchForm searchForm = SearchForm.getInstance();
+            SearchForm searchForm =
+                SearchForm.getInstance();
             searchForm.Show();
             this.Hide();
         }
@@ -49,21 +50,34 @@ namespace _3B
         private void manageCartBtn_Click(object sender, EventArgs e)
         {
             ShoppingCart shoppingCart = ShoppingCart.getInstance();
+            shoppingCart.OnLoad();
             shoppingCart.Show();
             this.Hide();
         }
 
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
-            if (ShoppingCartData.getInstance().BookLsListings.Count > 1)
+
+            if (ShoppingCartData.getInstance().BookLsListings.Count > 0)
             {
-                ConfirmOrder confirmOrder = ConfirmOrder.getInstance();
-                confirmOrder.Show();
-                this.Hide();
+                if (ShoppingCartData.getInstance().UserName == "Temporary User")
+                {
+                    custRegisterForm registerForm = new custRegisterForm();
+                    registerForm.ShowDialog();
+                }
+                else
+                {
+                    ConfirmOrder confirmOrder = ConfirmOrder.getInstance();
+                    confirmOrder.Show();
+                    this.Hide();
+                }
+
             }
+
             else
             {
-                MessageBox.Show("You have no items to checkout", "Error!", MessageBoxButtons.OK);
+
+                MessageBox.Show("No items to checkout", "Error", MessageBoxButtons.OK);
             }
         }
 

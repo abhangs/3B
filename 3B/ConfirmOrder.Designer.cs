@@ -37,6 +37,7 @@
             this.customerNameLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.creditCardLabel = new System.Windows.Forms.Label();
             this.cardNumberTxtBox = new System.Windows.Forms.TextBox();
             this.cardTypeCmbBox = new System.Windows.Forms.ComboBox();
             this.newCardRadioBtn = new System.Windows.Forms.RadioButton();
@@ -58,7 +59,6 @@
             this.printBtn = new System.Windows.Forms.Button();
             this.s = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.creditCardLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -161,6 +161,15 @@
             this.panel2.Size = new System.Drawing.Size(393, 162);
             this.panel2.TabIndex = 2;
             // 
+            // creditCardLabel
+            // 
+            this.creditCardLabel.AutoSize = true;
+            this.creditCardLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditCardLabel.Location = new System.Drawing.Point(39, 76);
+            this.creditCardLabel.Name = "creditCardLabel";
+            this.creditCardLabel.Size = new System.Drawing.Size(0, 20);
+            this.creditCardLabel.TabIndex = 11;
+            // 
             // cardNumberTxtBox
             // 
             this.cardNumberTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,7 +220,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(12, 260);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(746, 51);
+            this.panel3.Size = new System.Drawing.Size(775, 51);
             this.panel3.TabIndex = 3;
             // 
             // label5
@@ -249,7 +258,7 @@
             this.orderListPanel.AutoScroll = true;
             this.orderListPanel.Location = new System.Drawing.Point(12, 317);
             this.orderListPanel.Name = "orderListPanel";
-            this.orderListPanel.Size = new System.Drawing.Size(746, 278);
+            this.orderListPanel.Size = new System.Drawing.Size(775, 278);
             this.orderListPanel.TabIndex = 4;
             // 
             // label6
@@ -375,15 +384,6 @@
             this.exitBtn.Text = "Buy IT!";
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // creditCardLabel
-            // 
-            this.creditCardLabel.AutoSize = true;
-            this.creditCardLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditCardLabel.Location = new System.Drawing.Point(39, 76);
-            this.creditCardLabel.Name = "creditCardLabel";
-            this.creditCardLabel.Size = new System.Drawing.Size(0, 20);
-            this.creditCardLabel.TabIndex = 11;
             // 
             // ConfirmOrder
             // 

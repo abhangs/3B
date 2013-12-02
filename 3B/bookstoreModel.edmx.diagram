@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="bookstoreModel.review" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreModel.sale" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bookstoreModel.salesline" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bookstoreModel.state" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bookstoreModel.state" Width="1.5" PointX="6.125" PointY="9.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

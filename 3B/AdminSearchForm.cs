@@ -11,20 +11,20 @@ using System.Windows.Forms.VisualStyles;
 
 namespace _3B
 {
-    public partial class SearchForm : Form
+    public partial class AdminSearchForm : Form
     {
         bookstoreEntities1 bookEntity;
 
-        public static SearchForm INSTANCE;
+        public static AdminSearchForm INSTANCE;
 
-        public static SearchForm getInstance()
+        public static AdminSearchForm getInstance()
         {
             if (INSTANCE == null)
-                INSTANCE = new SearchForm();
+                INSTANCE = new AdminSearchForm();
             return INSTANCE;
         }
 
-        public SearchForm()
+        public AdminSearchForm()
         {
             InitializeComponent();
         }
@@ -53,7 +53,7 @@ namespace _3B
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            SearchResult searchResult = SearchResult.getInstance();
+            ModifyDeleteBooks modifyDeleteBooks = new ModifyDeleteBooks();
             TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
            
             int i = 0;
@@ -73,23 +73,24 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        var modifyDeleteBookControl = new ModifyDeleteBookControl();
+                        modifyDeleteBookControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null)
+                            foreach (author a in authorList)
+                                stringBuilder.Append("'"+ a.fname + a.lname + "'");
+                        modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
+                        //searchResultControl.publisherLabel.Text = b.publisher;
+                        //searchResultControl.isbnLabel.Text = b.bookid;
+                        modifyDeleteBookControl.priceLbl.Text = "$" + b.price;
+                        modifyDeleteBookControl.BookItem = b;
+                        if (b.deleted == true)
                         {
-
-                            var searchResultControl = new SearchResultControl();
-                            searchResultControl.bookLbl.Text = b.title;
-                            var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
-                            if (authorList.FirstOrDefault() != null)
-                                foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
-                            searchResultControl.byLabel.Text = stringBuilder.ToString();
-                            searchResultControl.publisherLabel.Text = b.publisher;
-                            searchResultControl.isbnLabel.Text = b.bookid;
-                            searchResultControl.priceLbl.Text = "$" + b.price;
-                            searchResultControl.BookItem = b;
-                            tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++);
-                            
+                            modifyDeleteBookControl.deletedLbl.Visible = true;
+                            modifyDeleteBookControl.deleteBtn.Enabled = false;
                         }
+                        tableLayoutPanel1.Controls.Add(modifyDeleteBookControl, 0, i++);
+
                        
 
                     }
@@ -108,20 +109,22 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        var modifyDeleteBookControl = new ModifyDeleteBookControl();
+                        modifyDeleteBookControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                        modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
+                        //searchResultControl.publisherLabel.Text = b.publisher;
+                        //searchResultControl.isbnLabel.Text = b.bookid;
+                        modifyDeleteBookControl.priceLbl.Text = "$" + b.price;
+                        modifyDeleteBookControl.BookItem = b;
+                        if (b.deleted == true)
                         {
-                            var searchResultControl = new SearchResultControl();
-                            searchResultControl.bookLbl.Text = b.title;
-                            var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
-                            if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
-                            searchResultControl.byLabel.Text = stringBuilder.ToString();
-                            searchResultControl.publisherLabel.Text = b.publisher;
-                            searchResultControl.isbnLabel.Text = b.bookid;
-                            searchResultControl.priceLbl.Text = "$" + b.price;
-                            searchResultControl.BookItem = b;
-                            tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++); 
+                            modifyDeleteBookControl.deletedLbl.Visible = true;
+                            modifyDeleteBookControl.deleteBtn.Enabled = false;
                         }
+                       tableLayoutPanel1.Controls.Add(modifyDeleteBookControl, 0, i++);
                     }
 
                 }
@@ -135,21 +138,23 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        var modifyDeleteBookControl = new ModifyDeleteBookControl();
+                        modifyDeleteBookControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                        
+                        modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
+                        //searchResultControl.publisherLabel.Text = b.publisher;
+                        //searchResultControl.isbnLabel.Text = b.bookid;
+                        modifyDeleteBookControl.priceLbl.Text = "$" + b.price;
+                        modifyDeleteBookControl.BookItem = b;
+                        if (b.deleted == true)
                         {
-                            var searchResultControl = new SearchResultControl();
-                            searchResultControl.bookLbl.Text = b.title;
-                            var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
-                            if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
-
-                            searchResultControl.byLabel.Text = stringBuilder.ToString();
-                            searchResultControl.publisherLabel.Text = b.publisher;
-                            searchResultControl.isbnLabel.Text = b.bookid;
-                            searchResultControl.priceLbl.Text = "$" + b.price;
-                            searchResultControl.BookItem = b;
-                            tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++); 
+                            modifyDeleteBookControl.deletedLbl.Visible = true;
+                            modifyDeleteBookControl.deleteBtn.Enabled = false;
                         }
+                        tableLayoutPanel1.Controls.Add(modifyDeleteBookControl, 0, i++);
 
                     }
 
@@ -164,22 +169,24 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        var modifyDeleteBookControl = new ModifyDeleteBookControl();
+                        modifyDeleteBookControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                        stringBuilder.Remove(stringBuilder.Capacity - 1, 1);
+                        modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
+                        //searchResultControl.publisherLabel.Text = b.publisher;
+                        //searchResultControl.isbnLabel.Text = b.bookid;
+                        modifyDeleteBookControl.priceLbl.Text = "$" + b.price;
+                        modifyDeleteBookControl.BookItem = b;
+                        if (b.deleted == true)
                         {
-                            var searchResultControl = new SearchResultControl();
-                            searchResultControl.bookLbl.Text = b.title;
-                            var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
-                            if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
-                            stringBuilder.Remove(stringBuilder.Capacity - 1, 1);
-                            searchResultControl.byLabel.Text = stringBuilder.ToString();
-                            searchResultControl.publisherLabel.Text = b.publisher;
-                            searchResultControl.isbnLabel.Text = b.bookid;
-                            searchResultControl.priceLbl.Text = "$" + b.price;
-                            searchResultControl.BookItem = b;
-                            tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++); ;
-                            
+                            modifyDeleteBookControl.deletedLbl.Visible = true;
+                            modifyDeleteBookControl.deleteBtn.Enabled = false;
                         }
+                        tableLayoutPanel1.Controls.Add(modifyDeleteBookControl, 0, i++); ;
+
                     }
                 }
 
@@ -204,21 +211,23 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        var modifyDeleteBookControl = new ModifyDeleteBookControl();
+                        modifyDeleteBookControl.bookLbl.Text = b.title;
+                        var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
+                        if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                        modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
+                        //searchResultControl.publisherLabel.Text = b.publisher;
+                        //searchResultControl.isbnLabel.Text = b.bookid;
+                        modifyDeleteBookControl.priceLbl.Text = "$" + b.price;
+                        modifyDeleteBookControl.BookItem = b;
+                        if (b.deleted == true)
                         {
-                            var searchResultControl = new SearchResultControl();
-                            searchResultControl.bookLbl.Text = b.title;
-                            var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
-                            if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
-                            searchResultControl.byLabel.Text = stringBuilder.ToString();
-                            searchResultControl.publisherLabel.Text = b.publisher;
-                            searchResultControl.isbnLabel.Text = b.bookid;
-                            searchResultControl.priceLbl.Text = "$" + b.price;
-                            searchResultControl.BookItem = b;
-                            tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++);
-                            
+                            modifyDeleteBookControl.deletedLbl.Visible = true;
+                            modifyDeleteBookControl.deleteBtn.Enabled = false;
                         }
+                        tableLayoutPanel1.Controls.Add(modifyDeleteBookControl, 0, i++);
+                       
                     }
 
 
@@ -231,10 +240,10 @@ namespace _3B
                 tableLayoutPanel1.AutoScroll = true;
                 tableLayoutPanel1.Name = "tableLayoutPanel1";
                 tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
-                searchResult.panel1.Controls.Add(tableLayoutPanel1);
+                modifyDeleteBooks.panel2.Controls.Add(tableLayoutPanel1);
 
-                ShoppingCartData.getInstance().LastCategorySearched = categoryCmbBox.SelectedItem.ToString();
-                searchResult.Show();
+                //ShoppingCartData.getInstance().LastCategorySearched = categoryCmbBox.SelectedItem.ToString();
+                modifyDeleteBooks.Show();
                 this.Hide();
 
             }
@@ -257,6 +266,7 @@ namespace _3B
         private void manageShpngCartBtn_Click(object sender, EventArgs e)
         {
             ShoppingCart shoppingCart = ShoppingCart.getInstance();
+            shoppingCart.OnLoad();
             shoppingCart.Show();
             this.Hide();
         }

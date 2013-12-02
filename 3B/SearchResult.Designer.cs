@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.currentItemCountLbl = new System.Windows.Forms.Label();
             this.manageCartBtn = new System.Windows.Forms.Button();
             this.checkoutBtn = new System.Windows.Forms.Button();
             this.newSearchBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.searchResultPanel = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            this.searchResultPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -46,7 +46,7 @@
             this.groupBox1.Controls.Add(this.currentItemCountLbl);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 45);
+            this.groupBox1.Size = new System.Drawing.Size(469, 45);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -104,40 +104,34 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // searchResultPanel
+            // notifyIcon1
             // 
-            this.searchResultPanel.AutoScroll = true;
-            this.searchResultPanel.Controls.Add(this.panel1);
-            this.searchResultPanel.Location = new System.Drawing.Point(13, 74);
-            this.searchResultPanel.Name = "searchResultPanel";
-            this.searchResultPanel.Size = new System.Drawing.Size(760, 234);
-            this.searchResultPanel.TabIndex = 5;
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(-11, -11);
+            this.panel1.Location = new System.Drawing.Point(13, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 245);
-            this.panel1.TabIndex = 6;
+            this.panel1.Size = new System.Drawing.Size(760, 245);
+            this.panel1.TabIndex = 5;
             // 
             // SearchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 384);
-            this.Controls.Add(this.searchResultPanel);
+            this.ClientSize = new System.Drawing.Size(793, 382);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newSearchBtn);
             this.Controls.Add(this.checkoutBtn);
             this.Controls.Add(this.manageCartBtn);
             this.Controls.Add(this.groupBox1);
             this.Name = "SearchResult";
-            this.Text = "Shopping Cart - 3-B.com";
+            this.Text = "Search Result - 3-B.com";
             this.Load += new System.EventHandler(this.SearchResult_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.searchResultPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,7 +144,7 @@
         private System.Windows.Forms.Button checkoutBtn;
         private System.Windows.Forms.Button newSearchBtn;
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.Panel searchResultPanel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
         public System.Windows.Forms.Panel panel1;
     }
 }

@@ -23,6 +23,8 @@ namespace _3B
         {
             var bookstoreEntities1 = new bookstoreEntities1();
 
+            TableLayoutPanel tableLayout = new TableLayoutPanel();
+
             ShoppingCartData.getInstance().getCustomerData();
             customerNameLbl.Text = ShoppingCartData.getInstance().Customer.fname + " " +
                                    ShoppingCartData.getInstance().Customer.lname;
@@ -56,9 +58,19 @@ namespace _3B
                 confirmOrderControl.priceLbl.Text = "$" + bookOrder.Book.price;
                 confirmOrderControl.quantityLbl.Text = bookOrder.BookQuantity.ToString();
                 confirmOrderControl.quantityPriceLbl.Text = "$" + (bookOrder.BookQuantity * bookOrder.Book.price);
-                subTotal = subTotal + double.Parse(confirmOrderControl.quantityPriceLbl.Text);
-                orderListPanel.Controls.Add(confirmOrderControl);
+                subTotal = subTotal + double.Parse(confirmOrderControl.quantityPriceLbl.Text.Replace('$',' '));
+                tableLayout.Controls.Add(confirmOrderControl);
             }
+
+            tableLayout.Location = new Point(12, 63);
+            tableLayout.Size = new Size(750, 230);
+            tableLayout.Dock = DockStyle.Fill;
+            tableLayout.AutoSize = false;
+            tableLayout.AutoScroll = true;
+            tableLayout.Name = "tableLayoutPanel1";
+            tableLayout.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+
+            orderListPanel.Controls.Add(tableLayout);
 
             subTotalLbl.Text = "$" + subTotal;
             shippingHandlingLbl.Text = "$4.00";

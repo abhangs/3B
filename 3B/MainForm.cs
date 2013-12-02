@@ -41,7 +41,18 @@ namespace _3B
                 this.Hide();
             }
 
+            else if (adminRadioButton.Checked)
+            {
+                AdminHome adminHome = new AdminHome();
+                adminHome.Show();
+                this.Hide();
+            }
+        }
 
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            ShoppingCartData.getInstance();
+            
         }
 
         

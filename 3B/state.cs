@@ -14,7 +14,7 @@ namespace _3B
     
     public partial class state
     {
-        public string stateabbr { get; set; }
         public string statename { get; set; }
+        public string stateabbr { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace _3B
 {
-    partial class SearchForm
+    partial class AdminSearchForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.categoryCmbBox = new System.Windows.Forms.ComboBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.manageShpngCartBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.searchInLstBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -89,7 +88,7 @@
             // searchBtn
             // 
             this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.Location = new System.Drawing.Point(536, 36);
+            this.searchBtn.Location = new System.Drawing.Point(536, 106);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(231, 35);
             this.searchBtn.TabIndex = 6;
@@ -97,21 +96,10 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // manageShpngCartBtn
-            // 
-            this.manageShpngCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageShpngCartBtn.Location = new System.Drawing.Point(536, 122);
-            this.manageShpngCartBtn.Name = "manageShpngCartBtn";
-            this.manageShpngCartBtn.Size = new System.Drawing.Size(231, 37);
-            this.manageShpngCartBtn.TabIndex = 7;
-            this.manageShpngCartBtn.Text = "Manage Shopping Cart";
-            this.manageShpngCartBtn.UseVisualStyleBackColor = true;
-            this.manageShpngCartBtn.Click += new System.EventHandler(this.manageShpngCartBtn_Click);
-            // 
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(536, 218);
+            this.exitBtn.Location = new System.Drawing.Point(536, 164);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(231, 37);
             this.exitBtn.TabIndex = 8;
@@ -128,22 +116,21 @@
             this.searchInLstBox.Size = new System.Drawing.Size(325, 116);
             this.searchInLstBox.TabIndex = 9;
             // 
-            // SearchForm
+            // AdminSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 300);
             this.Controls.Add(this.searchInLstBox);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.manageShpngCartBtn);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.categoryCmbBox);
             this.Controls.Add(this.searchTxtBox);
             this.Controls.Add(this.categoryLbl);
             this.Controls.Add(this.searchInLbl);
             this.Controls.Add(this.searchForLbl);
-            this.Name = "SearchForm";
-            this.Text = "SEARCH -3-B.com";
+            this.Name = "AdminSearchForm";
+            this.Text = "MODIFY/DELETE BOOKS [Search] -3-B.com";
             this.Load += new System.EventHandler(this.SearchForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,7 +145,6 @@
         private System.Windows.Forms.TextBox searchTxtBox;
         private System.Windows.Forms.ComboBox categoryCmbBox;
         private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.Button manageShpngCartBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ListBox searchInLstBox;
     }

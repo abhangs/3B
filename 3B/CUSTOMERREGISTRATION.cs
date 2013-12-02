@@ -89,12 +89,13 @@ namespace _3B
             else
             {
                 var userName = usernameTxtBox.Text;
-                var result = bookstoreEntities1.customers.FirstOrDefault(c => c.username == userName);
-                if (result != null)
-                {
-                    MessageBox.Show("Username already taken! Please choose another Username", "Error!", MessageBoxButtons.OK);
-                    return;
-                }
+                
+                //var result = bookstoreEntities1.customers.FirstOrDefault(c => c.username == userName);
+                //if (result != null)
+                //{
+                //    MessageBox.Show("Username already taken! Please choose another Username", "Error!", MessageBoxButtons.OK);
+                //    return;
+                //}
                 if (pinTxtBox.Text != reTypePinTxtBox.Text)
                 {
                     MessageBox.Show("PIN's entered do not match!", "Error!", MessageBoxButtons.OK);
@@ -155,16 +156,26 @@ namespace _3B
             var states = from s in bookstoreEntities1.states select s;
             foreach (var state in states)
             {
-                stateCmbBox.Items.Add(state); 
+                stateCmbBox.Items.Add(state.statename); 
             }
 
+            var cardType = bookstoreEntities1.creditcardtypes;
+            foreach (var creditcardtype in cardType)
+            {
+                cardTypeCmbBox.Items.Add(creditcardtype.creditcardtype1);
+            }
 
         }
 
         private void btnDontRegister_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("In order to proceed with the payment, you need to register first.", "Message",
+            if(ShoppingCartData.getInstance().UserName=="Temporary User")
+                MessageBox.Show("In order to proceed with the payment, you need to register first.", "Message",
                 MessageBoxButtons.OK);
+            else
+            {
+                this.Close();
+            }
 
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace _3B
 {
@@ -68,6 +69,8 @@ namespace _3B
             UserName = "Temporary User";
             bookLsListings = new List<BookListing>();
             bookstoreEntities1 = new bookstoreEntities1();
+            customer = new customer();
+            
         }
 
         public static ShoppingCartData getInstance()
@@ -84,17 +87,25 @@ namespace _3B
 
         public  void getCustomerData()
         {
-            if (UserName != "Temporary User")
+            try
             {
-                var result = bookstoreEntities1.customers.Where(c => c.username.Equals(UserName));
-                if (result.FirstOrDefault() != null)
+                if (UserName != "Temporary User")
                 {
-                    customer.fname = result.FirstOrDefault().fname;
-                    customer.lname = result.FirstOrDefault().lname;
-                    customer.address = result.FirstOrDefault().address;
-                    customer.state = result.FirstOrDefault().state;
-                    customer.zip = result.FirstOrDefault().zip;
+                    var result = bookstoreEntities1.customers.Where(c => c.username.Equals(UserName));
+                    if (result.FirstOrDefault() != null)
+                    {
+                        customer.fname = result.FirstOrDefault().fname;
+                        customer.lname = result.FirstOrDefault().lname;
+                        customer.address = result.FirstOrDefault().address;
+                        customer.state = result.FirstOrDefault().state;
+                        customer.zip = result.FirstOrDefault().zip;
+                    }
                 }
+            }
+            catch (Exception exception)
+            {
+                
+                MessageBox.Show(exception.StackTrace);
             }
         }
 

@@ -149,6 +149,7 @@
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Best Buy Online Bookstore!";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.radioGrpBox.ResumeLayout(false);
             this.radioGrpBox.PerformLayout();
             this.ResumeLayout(false);

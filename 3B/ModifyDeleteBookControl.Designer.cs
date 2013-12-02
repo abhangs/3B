@@ -1,6 +1,6 @@
 ﻿namespace _3B
 {
-    partial class SearchResultControl
+    partial class ModifyDeleteBookControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,28 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.bookLbl = new System.Windows.Forms.Label();
             this.ByLbl = new System.Windows.Forms.Label();
             this.byLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.publisherLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.isbnLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.priceLbl = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deletedLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // deleteBtn
             // 
-            this.button2.Location = new System.Drawing.Point(18, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Reviews";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.deleteBtn.Location = new System.Drawing.Point(18, 13);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(110, 37);
+            this.deleteBtn.TabIndex = 0;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Location = new System.Drawing.Point(18, 56);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(110, 36);
+            this.updateBtn.TabIndex = 1;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // bookLbl
             // 
@@ -79,49 +86,11 @@
             this.byLabel.TabIndex = 4;
             this.byLabel.Text = "ByLabel";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(150, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Publisher: ";
-            // 
-            // publisherLabel
-            // 
-            this.publisherLabel.AutoSize = true;
-            this.publisherLabel.Location = new System.Drawing.Point(242, 56);
-            this.publisherLabel.Name = "publisherLabel";
-            this.publisherLabel.Size = new System.Drawing.Size(102, 17);
-            this.publisherLabel.TabIndex = 6;
-            this.publisherLabel.Text = "PublisherLabel";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(150, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "ISBN: ";
-            // 
-            // isbnLabel
-            // 
-            this.isbnLabel.AutoSize = true;
-            this.isbnLabel.Location = new System.Drawing.Point(209, 73);
-            this.isbnLabel.Name = "isbnLabel";
-            this.isbnLabel.Size = new System.Drawing.Size(74, 17);
-            this.isbnLabel.TabIndex = 8;
-            this.isbnLabel.Text = "ISBNLabel";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 71);
+            this.label3.Location = new System.Drawing.Point(149, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 9;
@@ -130,38 +99,38 @@
             // priceLbl
             // 
             this.priceLbl.AutoSize = true;
-            this.priceLbl.Location = new System.Drawing.Point(392, 71);
+            this.priceLbl.Location = new System.Drawing.Point(210, 65);
             this.priceLbl.Name = "priceLbl";
             this.priceLbl.Size = new System.Drawing.Size(75, 17);
             this.priceLbl.TabIndex = 10;
             this.priceLbl.Text = "PriceLabel";
             // 
-            // button1
+            // deletedLbl
             // 
-            this.button1.Location = new System.Drawing.Point(18, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Add to Cart";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.deletedLbl.AutoSize = true;
+            this.deletedLbl.BackColor = System.Drawing.Color.Red;
+            this.deletedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletedLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.deletedLbl.Location = new System.Drawing.Point(435, 63);
+            this.deletedLbl.Name = "deletedLbl";
+            this.deletedLbl.Size = new System.Drawing.Size(95, 20);
+            this.deletedLbl.TabIndex = 11;
+            this.deletedLbl.Text = "DELETED";
+            this.deletedLbl.Visible = false;
             // 
-            // SearchResultControl
+            // ModifyDeleteBookControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deletedLbl);
             this.Controls.Add(this.priceLbl);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.isbnLabel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.publisherLabel);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.byLabel);
             this.Controls.Add(this.ByLbl);
             this.Controls.Add(this.bookLbl);
-            this.Controls.Add(this.button2);
-            this.Name = "SearchResultControl";
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Name = "ModifyDeleteBookControl";
             this.Size = new System.Drawing.Size(565, 106);
             this.Load += new System.EventHandler(this.searchResultControl_Load);
             this.ResumeLayout(false);
@@ -171,17 +140,13 @@
 
         #endregion
 
-      //  private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label ByLbl;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label byLabel;
         public System.Windows.Forms.Label bookLbl;
-        public System.Windows.Forms.Label publisherLabel;
-        public System.Windows.Forms.Label isbnLabel;
         public System.Windows.Forms.Label priceLbl;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateBtn;
+        public System.Windows.Forms.Label deletedLbl;
+        public System.Windows.Forms.Button deleteBtn;
     }
 }

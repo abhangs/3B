@@ -135,11 +135,11 @@
         </EntityType>
         <EntityType Name="states">
           <Key>
-            <PropertyRef Name="stateabbr" />
             <PropertyRef Name="statename" />
+            <PropertyRef Name="stateabbr" />
           </Key>
-          <Property Name="stateabbr" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="statename" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="stateabbr" Type="varchar" Nullable="false" MaxLength="500" />
         </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -235,7 +235,7 @@
           <Property Name="zip" Type="Int32" />
           <Property Name="creditcardtype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="creditcardnumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="expirydate" Type="String" />
+          <Property Name="expirydate" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="categorylastsearched" Type="Int16" />
         </EntityType>
         <EntityType Name="order">
@@ -275,11 +275,11 @@
         </EntityType>
         <EntityType Name="state">
           <Key>
-            <PropertyRef Name="stateabbr" />
             <PropertyRef Name="statename" />
+            <PropertyRef Name="stateabbr" />
           </Key>
-          <Property Name="stateabbr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="statename" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="statename" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="stateabbr" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

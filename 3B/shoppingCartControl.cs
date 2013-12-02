@@ -28,6 +28,7 @@ namespace _3B
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            bookstoreEntities1 = new bookstoreEntities1();
             var label = bookLabel.Text;
             var result = bookstoreEntities1.books.Where(b => b.title.Contains(label)).Select(b => b.quantity).FirstOrDefault();
             if (result != null && int.Parse(textBox1.Text) > (int) result)
@@ -35,7 +36,7 @@ namespace _3B
                 MessageBox.Show("Available quantity: " + result);
                 return;
             }
-            this.quantityPriceLabel.Text = (Double.Parse(priceLabel.Text)*result).ToString();
+            this.quantityPriceLabel.Text = (Double.Parse(priceLabel.Text.Replace('$',' '))*result).ToString();
             
         }
 

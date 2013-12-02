@@ -29,11 +29,10 @@ namespace _3B
                 bookstoreEntities1 = new bookstoreEntities1();
                 if ((bookstoreEntities1.customers.Where(c => c.username == username && c.pin == pin)).Any())
                 {
+                    ShoppingCartData.getInstance().UserName = username;
                     SearchForm searchForm = SearchForm.getInstance();
-
-                    
-
                     searchForm.Show();
+                    this.Hide();
                 }
                 else
                 {

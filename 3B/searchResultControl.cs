@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    public partial class searchResultControl : UserControl
+    public partial class SearchResultControl : UserControl
     {
         private book bookItem;
 
@@ -22,7 +22,7 @@ namespace _3B
             set { bookItem = value; }
         }
 
-        public searchResultControl()
+        public SearchResultControl()
         {
             InitializeComponent();
         }
@@ -65,5 +65,6 @@ namespace _3B
             bookstoreEntities1 = new bookstoreEntities1();
         }
 
+       
     }
 }
