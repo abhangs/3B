@@ -50,11 +50,10 @@
             // 
             // bookLabel
             // 
-            this.bookLabel.AutoSize = true;
             this.bookLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookLabel.Location = new System.Drawing.Point(147, 4);
             this.bookLabel.Name = "bookLabel";
-            this.bookLabel.Size = new System.Drawing.Size(77, 18);
+            this.bookLabel.Size = new System.Drawing.Size(276, 18);
             this.bookLabel.TabIndex = 1;
             this.bookLabel.Text = "bookLabel";
             // 
@@ -62,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 22);
+            this.label2.Location = new System.Drawing.Point(147, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 3;
@@ -72,7 +71,7 @@
             // 
             this.authorLabel.AutoSize = true;
             this.authorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authorLabel.Location = new System.Drawing.Point(190, 22);
+            this.authorLabel.Location = new System.Drawing.Point(190, 34);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(85, 18);
             this.authorLabel.TabIndex = 4;
@@ -82,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 40);
+            this.label3.Location = new System.Drawing.Point(147, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 18);
             this.label3.TabIndex = 5;
@@ -92,7 +91,7 @@
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.Location = new System.Drawing.Point(210, 40);
+            this.priceLabel.Location = new System.Drawing.Point(210, 52);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(75, 18);
             this.priceLabel.TabIndex = 6;

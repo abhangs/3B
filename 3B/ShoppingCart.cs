@@ -73,7 +73,7 @@ namespace _3B
             foreach (var shoppingCartControl in shoppingCartControls)
             {
                 tableLayout.Controls.Add(shoppingCartControl);
-                subtotal = subtotal + Double.Parse(shoppingCartControl.priceLabel.Text);
+                subtotal = subtotal + Double.Parse(shoppingCartControl.priceLabel.Text.Replace('$',' '));
             }
 
            tableLayout.Location = new Point(12, 63);
@@ -136,6 +136,11 @@ namespace _3B
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ShoppingCart_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

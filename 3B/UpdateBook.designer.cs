@@ -407,6 +407,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UpdateBook";
             this.Text = "Update Book 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateBook_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

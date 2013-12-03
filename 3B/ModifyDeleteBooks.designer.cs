@@ -30,9 +30,9 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -56,12 +57,15 @@
             this.panel1.Size = new System.Drawing.Size(638, 49);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.Location = new System.Drawing.Point(21, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(638, 255);
-            this.panel2.TabIndex = 2;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(217, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Book Description";
             // 
             // label1
             // 
@@ -73,15 +77,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Action";
             // 
-            // label2
+            // panel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(217, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Book Description";
+            this.panel2.Location = new System.Drawing.Point(21, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(638, 255);
+            this.panel2.TabIndex = 2;
             // 
             // ModifyDeleteBooks
             // 
@@ -94,6 +95,7 @@
             this.MaximizeBox = false;
             this.Name = "ModifyDeleteBooks";
             this.Text = "ModifyDeleteBooks";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyDeleteBooks_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

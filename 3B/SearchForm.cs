@@ -261,6 +261,11 @@ namespace _3B
             this.Hide();
         }
 
+        private void SearchForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
     }
 }

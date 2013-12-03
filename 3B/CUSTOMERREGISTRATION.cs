@@ -169,14 +169,29 @@ namespace _3B
 
         private void btnDontRegister_Click(object sender, EventArgs e)
         {
-            if(ShoppingCartData.getInstance().UserName=="Temporary User")
-                MessageBox.Show("In order to proceed with the payment, you need to register first.", "Message",
-                MessageBoxButtons.OK);
+            if (btnDontRegister.Text == "Cancel")
+            {
+                mainForm mnForm = new mainForm();
+                mnForm.Show();
+                this.Hide();
+
+            }
             else
             {
-                this.Close();
+                if (ShoppingCartData.getInstance().UserName == "Temporary User")
+                    MessageBox.Show("In order to proceed with the payment, you need to register first.", "Message",
+                        MessageBoxButtons.OK);
+                else
+                {
+                    this.Close();
+                }
             }
 
+        }
+
+        private void custRegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
        

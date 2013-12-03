@@ -183,6 +183,7 @@
             this.MaximizeBox = false;
             this.Name = "ShoppingCart";
             this.Text = "Shopping Cart - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShoppingCart_FormClosing);
             this.Load += new System.EventHandler(this.ShoppingCart_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

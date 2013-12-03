@@ -449,6 +449,7 @@
             this.MaximizeBox = false;
             this.Name = "ProofOfPurchase";
             this.Text = "Confirm Order - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProofOfPurchase_FormClosing);
             this.Load += new System.EventHandler(this.ProofOfPurchase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

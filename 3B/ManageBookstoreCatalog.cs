@@ -37,5 +37,10 @@ namespace _3B
             adminHome.Show();
             this.Hide();
         }
+
+        private void ManageBookstoreCatalog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

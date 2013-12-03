@@ -144,6 +144,7 @@
             this.Controls.Add(this.searchForLbl);
             this.Name = "SearchForm";
             this.Text = "SEARCH -3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchForm_FormClosing);
             this.Load += new System.EventHandler(this.SearchForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

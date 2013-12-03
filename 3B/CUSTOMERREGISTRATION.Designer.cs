@@ -323,6 +323,7 @@
             this.MaximizeBox = false;
             this.Name = "custRegisterForm";
             this.Text = "CUSTOMER REGISTRATION - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.custRegisterForm_FormClosing);
             this.Load += new System.EventHandler(this.custRegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

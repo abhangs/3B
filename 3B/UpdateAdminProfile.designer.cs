@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.updateButton = new System.Windows.Forms.Button();
+            this.update1Button = new System.Windows.Forms.Button();
             this.stateCmbBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.zipTxtBox = new System.Windows.Forms.TextBox();
@@ -54,16 +54,17 @@
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // updateButton
+            // update1Button
             // 
-            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(152, 413);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(135, 46);
-            this.updateButton.TabIndex = 48;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.update1Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update1Button.Location = new System.Drawing.Point(152, 413);
+            this.update1Button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.update1Button.Name = "update1Button";
+            this.update1Button.Size = new System.Drawing.Size(135, 46);
+            this.update1Button.TabIndex = 48;
+            this.update1Button.Text = "Update";
+            this.update1Button.UseVisualStyleBackColor = true;
+            this.update1Button.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // stateCmbBox
             // 
@@ -187,6 +188,7 @@
             this.reTypePinTxtBox.Location = new System.Drawing.Point(486, 84);
             this.reTypePinTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reTypePinTxtBox.Name = "reTypePinTxtBox";
+            this.reTypePinTxtBox.PasswordChar = '*';
             this.reTypePinTxtBox.Size = new System.Drawing.Size(134, 31);
             this.reTypePinTxtBox.TabIndex = 30;
             // 
@@ -206,6 +208,7 @@
             this.pinTxtBox.Location = new System.Drawing.Point(178, 84);
             this.pinTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pinTxtBox.Name = "pinTxtBox";
+            this.pinTxtBox.PasswordChar = '*';
             this.pinTxtBox.Size = new System.Drawing.Size(134, 31);
             this.pinTxtBox.TabIndex = 28;
             // 
@@ -225,6 +228,7 @@
             this.usernameTxtBox.Location = new System.Drawing.Point(178, 39);
             this.usernameTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.usernameTxtBox.Name = "usernameTxtBox";
+            this.usernameTxtBox.ReadOnly = true;
             this.usernameTxtBox.Size = new System.Drawing.Size(234, 31);
             this.usernameTxtBox.TabIndex = 26;
             // 
@@ -254,6 +258,7 @@
             this.hireDateTxtBox.Location = new System.Drawing.Point(540, 39);
             this.hireDateTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hireDateTxtBox.Name = "hireDateTxtBox";
+            this.hireDateTxtBox.ReadOnly = true;
             this.hireDateTxtBox.Size = new System.Drawing.Size(111, 31);
             this.hireDateTxtBox.TabIndex = 47;
             // 
@@ -267,6 +272,7 @@
             this.cancelButton.TabIndex = 49;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label10
             // 
@@ -295,7 +301,7 @@
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.update1Button);
             this.Controls.Add(this.hireDateTxtBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.stateCmbBox);
@@ -318,6 +324,8 @@
             this.Controls.Add(this.label1);
             this.Name = "UpdateAdminProfile";
             this.Text = "Update Admin Profile 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateAdminProfile_FormClosing);
+            this.Load += new System.EventHandler(this.UpdateAdminProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +333,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button update1Button;
         private System.Windows.Forms.ComboBox stateCmbBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox zipTxtBox;

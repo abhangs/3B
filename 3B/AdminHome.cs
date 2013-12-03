@@ -50,6 +50,16 @@ namespace _3B
 
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AdminHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
        
 
       

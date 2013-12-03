@@ -404,6 +404,7 @@
             this.MaximizeBox = false;
             this.Name = "ConfirmOrder";
             this.Text = "Confirm Order - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfirmOrder_FormClosing);
             this.Load += new System.EventHandler(this.ConfirmOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

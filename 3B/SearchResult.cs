@@ -86,6 +86,11 @@ namespace _3B
             Application.Exit();
         }
 
+        private void SearchResult_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
        
     }
 }

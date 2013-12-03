@@ -28,5 +28,10 @@ namespace _3B
             return INSTANCE;
         }
 
+        private void BookReview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

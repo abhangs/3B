@@ -129,5 +129,11 @@ namespace _3B
             this.statusTextBox.Text = "Active";
             deleted = false;
         }
+
+        private void UpdateBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

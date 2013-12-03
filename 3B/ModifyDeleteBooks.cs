@@ -16,5 +16,17 @@ namespace _3B
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminHome ah=new AdminHome();
+            ah.Show();
+            this.Hide();
+        }
+
+        private void ModifyDeleteBooks_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -38,5 +38,10 @@ namespace _3B
             ah.Show();
             this.Hide();
         }
+
+        private void PlacingOrders_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

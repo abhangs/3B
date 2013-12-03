@@ -63,6 +63,12 @@
     <Compile Include="AdminHome.designer.cs">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminphone.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -171,6 +177,30 @@
     <Compile Include="CUSTOMERREGISTRATION.Designer.cs">
       <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report1.designer.cs">
+      <DependentUpon>Report1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report2.designer.cs">
+      <DependentUpon>Report2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report3.designer.cs">
+      <DependentUpon>Report3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report4.designer.cs">
+      <DependentUpon>Report4.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +258,13 @@
     <Compile Include="state.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="StaticLoginInfo.cs" />
+    <Compile Include="StatisticalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticalReport.designer.cs">
+      <DependentUpon>StatisticalReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateAdminProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +285,9 @@
     </Compile>
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookReview.resx">
       <DependentUpon>BookReview.cs</DependentUpon>
@@ -285,6 +325,18 @@
     <EmbeddedResource Include="CUSTOMERREGISTRATION.resx">
       <DependentUpon>CUSTOMERREGISTRATION.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.resx">
+      <DependentUpon>Report1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.resx">
+      <DependentUpon>Report2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report3.resx">
+      <DependentUpon>Report3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report4.resx">
+      <DependentUpon>Report4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="shoppingCartControl.resx">
       <DependentUpon>shoppingCartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticalReport.resx">
+      <DependentUpon>StatisticalReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateAdminProfile.resx">
       <DependentUpon>UpdateAdminProfile.cs</DependentUpon>

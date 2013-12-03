@@ -30,21 +30,23 @@ namespace _3B
             else if (newCustRadioButton.Checked)
             {
                 custRegisterForm custRegisterForm = new custRegisterForm();
+                custRegisterForm.btnDontRegister.Text = "Cancel";
                 custRegisterForm.Visible = true;
+
                 this.Hide();
             }
 
             else if (returnCustRadioBox.Checked)
             {
                 UserLogin userLogin = new UserLogin();
-                userLogin.ShowDialog();
+                userLogin.Show();
                 this.Hide();
             }
 
             else if (adminRadioButton.Checked)
             {
-                AdminHome adminHome = new AdminHome();
-                adminHome.Show();
+                AdminLogin al= new AdminLogin();
+                al.Show();
                 this.Hide();
             }
         }
@@ -53,6 +55,11 @@ namespace _3B
         {
             ShoppingCartData.getInstance();
             
+        }
+
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         

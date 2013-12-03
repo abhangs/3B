@@ -84,6 +84,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BookReview";
             this.Text = "Book Reviews - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookReview_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

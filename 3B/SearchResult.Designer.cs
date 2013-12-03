@@ -129,6 +129,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SearchResult";
             this.Text = "Search Result - 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchResult_FormClosing);
             this.Load += new System.EventHandler(this.SearchResult_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

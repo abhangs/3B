@@ -159,5 +159,10 @@ namespace _3B
                 MessageBox.Show(exception.StackTrace);
             }
         }
+
+        private void InsertNewBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

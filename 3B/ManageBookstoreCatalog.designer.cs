@@ -35,9 +35,11 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(109, 47);
+            this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insertButton.Location = new System.Drawing.Point(97, 38);
+            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(305, 54);
+            this.insertButton.Size = new System.Drawing.Size(271, 43);
             this.insertButton.TabIndex = 0;
             this.insertButton.Text = "Insert New Book";
             this.insertButton.UseVisualStyleBackColor = true;
@@ -45,9 +47,11 @@
             // 
             // modifyDeleteButton
             // 
-            this.modifyDeleteButton.Location = new System.Drawing.Point(109, 134);
+            this.modifyDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifyDeleteButton.Location = new System.Drawing.Point(97, 107);
+            this.modifyDeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modifyDeleteButton.Name = "modifyDeleteButton";
-            this.modifyDeleteButton.Size = new System.Drawing.Size(305, 54);
+            this.modifyDeleteButton.Size = new System.Drawing.Size(271, 43);
             this.modifyDeleteButton.TabIndex = 1;
             this.modifyDeleteButton.Text = "Modify/Delete Book";
             this.modifyDeleteButton.UseVisualStyleBackColor = true;
@@ -55,9 +59,11 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(109, 221);
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(97, 177);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(305, 54);
+            this.backButton.Size = new System.Drawing.Size(271, 43);
             this.backButton.TabIndex = 2;
             this.backButton.Text = "Back to Main Menu";
             this.backButton.UseVisualStyleBackColor = true;
@@ -65,14 +71,16 @@
             // 
             // ManageBookstoreCatalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 325);
+            this.ClientSize = new System.Drawing.Size(460, 260);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.modifyDeleteButton);
             this.Controls.Add(this.insertButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageBookstoreCatalog";
             this.Text = "Manage Bookstore Catalog 3-B.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookstoreCatalog_FormClosing);
             this.ResumeLayout(false);
 
         }

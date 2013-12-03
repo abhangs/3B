@@ -134,6 +134,11 @@ namespace _3B
             this.Close();
         }
 
+        private void ConfirmOrder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
 
            }
