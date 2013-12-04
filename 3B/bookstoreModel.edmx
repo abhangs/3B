@@ -190,7 +190,7 @@
           </Key>
           <Property Name="fname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="minit" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="lname" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
           <Property Name="bookid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="book">

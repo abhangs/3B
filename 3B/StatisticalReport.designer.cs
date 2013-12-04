@@ -70,32 +70,35 @@
             // avgSalesTxtBox
             // 
             this.avgSalesTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avgSalesTxtBox.Location = new System.Drawing.Point(388, 61);
+            this.avgSalesTxtBox.Location = new System.Drawing.Point(465, 58);
             this.avgSalesTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avgSalesTxtBox.Name = "avgSalesTxtBox";
             this.avgSalesTxtBox.ReadOnly = true;
             this.avgSalesTxtBox.Size = new System.Drawing.Size(111, 26);
             this.avgSalesTxtBox.TabIndex = 3;
+            this.avgSalesTxtBox.Text = "36.99";
             // 
             // avgBooksTxtBox
             // 
             this.avgBooksTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avgBooksTxtBox.Location = new System.Drawing.Point(505, 110);
+            this.avgBooksTxtBox.Location = new System.Drawing.Point(585, 108);
             this.avgBooksTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avgBooksTxtBox.Name = "avgBooksTxtBox";
             this.avgBooksTxtBox.ReadOnly = true;
             this.avgBooksTxtBox.Size = new System.Drawing.Size(111, 26);
             this.avgBooksTxtBox.TabIndex = 4;
+            this.avgBooksTxtBox.Text = "3";
             // 
             // avgCustomerTxtBox
             // 
             this.avgCustomerTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avgCustomerTxtBox.Location = new System.Drawing.Point(388, 164);
+            this.avgCustomerTxtBox.Location = new System.Drawing.Point(430, 164);
             this.avgCustomerTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avgCustomerTxtBox.Name = "avgCustomerTxtBox";
             this.avgCustomerTxtBox.ReadOnly = true;
             this.avgCustomerTxtBox.Size = new System.Drawing.Size(111, 26);
             this.avgCustomerTxtBox.TabIndex = 5;
+            this.avgCustomerTxtBox.Text = "6";
             // 
             // btnOk
             // 

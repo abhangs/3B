@@ -30,8 +30,59 @@ namespace _3B
                 if ((bookstoreEntities1.customers.Where(c => c.username == username && c.pin == pin)).Any())
                 {
                     ShoppingCartData.getInstance().UserName = username;
-                    SearchForm searchForm = SearchForm.getInstance();
-                    searchForm.Show();
+                    //SearchForm searchForm = SearchForm.getInstance();
+                    //searchForm.Show();
+
+                    SearchResult searchResult = SearchResult.getInstance();
+                    searchResult.panel1.Controls.Clear();
+                    TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+
+                    int i = 0;
+                    StringBuilder stringBuilder = new StringBuilder();
+
+                    var lastCategory =
+                        bookstoreEntities1.customers.Where(c => c.username == username)
+                            .Select(c => c.categorylastsearched);
+
+                    if (lastCategory.FirstOrDefault() != null)
+                    {
+                        var categoryId =
+                            bookstoreEntities1.categories.Where(c => c.categoryid == lastCategory.FirstOrDefault()).Select( c => c.categoryid);
+                        var result = bookstoreEntities1.books.Where(b => b.categoryid == categoryId.FirstOrDefault());
+
+                        foreach (book b in result)
+                        {
+                            if (b.deleted != true)
+                            {
+                                var searchResultControl = new SearchResultControl();
+                                searchResultControl.bookLbl.Text = b.title;
+                                var authorList = (from a in bookstoreEntities1.authors where a.bookid.Contains(b.bookid) select a);
+                                if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
+                                        stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                searchResultControl.byLabel.Text = stringBuilder.ToString();
+                                searchResultControl.publisherLabel.Text = b.publisher;
+                                searchResultControl.isbnLabel.Text = b.bookid;
+                                searchResultControl.priceLbl.Text = "$" + b.price;
+                                searchResultControl.BookItem = b;
+                                tableLayoutPanel1.Controls.Add(searchResultControl, 0, i++);
+
+                            }
+                        }
+                    }
+
+                    tableLayoutPanel1.Location = new Point(12, 63);
+                    tableLayoutPanel1.Size = new Size(750, 230);
+                    tableLayoutPanel1.Dock = DockStyle.Fill;
+                    tableLayoutPanel1.AutoSize = false;
+                    tableLayoutPanel1.AutoScroll = true;
+                    tableLayoutPanel1.Name = "tableLayoutPanel1";
+                    tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
+                    searchResult.panel1.Controls.Add(tableLayoutPanel1);
+
+                    searchResult.Show();
+
+                    
+
                     this.Hide();
                 }
                 else

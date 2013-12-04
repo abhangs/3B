@@ -38,6 +38,9 @@ namespace _3B
             }
             else if (third.Checked)
             {
+                Report3 rp= new Report3();
+                rp.Show();
+                this.Hide();
 
             }
             else if (fourth.Checked)
@@ -48,6 +51,9 @@ namespace _3B
             }
             else if (fifth.Checked)
             {
+                Report5 rp = new Report5();
+                rp.Show();
+                this.Hide();
 
             }
             else if(radioButton1.Checked)

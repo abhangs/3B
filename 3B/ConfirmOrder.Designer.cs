@@ -37,6 +37,7 @@
             this.customerNameLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cardNumberTxt = new System.Windows.Forms.TextBox();
             this.creditCardLabel = new System.Windows.Forms.Label();
             this.cardNumberTxtBox = new System.Windows.Forms.TextBox();
             this.cardTypeCmbBox = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
             this.s = new System.Windows.Forms.Button();
-            this.exitBtn = new System.Windows.Forms.Button();
+            this.buyItBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cardNumberTxt);
             this.panel2.Controls.Add(this.creditCardLabel);
             this.panel2.Controls.Add(this.cardNumberTxtBox);
             this.panel2.Controls.Add(this.cardTypeCmbBox);
@@ -160,6 +162,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(393, 162);
             this.panel2.TabIndex = 2;
+
+            // 
+            // cardNumberTxt
+            // 
+            this.cardNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardNumberTxt.Location = new System.Drawing.Point(39, 74);
+            this.cardNumberTxt.Name = "cardNumberTxt";
+            this.cardNumberTxt.ReadOnly = true;
+            this.cardNumberTxt.Size = new System.Drawing.Size(260, 24);
+            this.cardNumberTxt.TabIndex = 12;
             // 
             // creditCardLabel
             // 
@@ -204,7 +216,7 @@
             // 
             this.useCreditCardRadioBtn.AutoSize = true;
             this.useCreditCardRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.useCreditCardRadioBtn.Location = new System.Drawing.Point(14, 51);
+            this.useCreditCardRadioBtn.Location = new System.Drawing.Point(14, 49);
             this.useCreditCardRadioBtn.Name = "useCreditCardRadioBtn";
             this.useCreditCardRadioBtn.Size = new System.Drawing.Size(201, 22);
             this.useCreditCardRadioBtn.TabIndex = 3;
@@ -360,7 +372,7 @@
             this.printBtn.TabIndex = 7;
             this.printBtn.Text = "Cancel";
             this.printBtn.UseVisualStyleBackColor = true;
-            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click_1);
             // 
             // s
             // 
@@ -373,24 +385,24 @@
             this.s.UseVisualStyleBackColor = true;
             this.s.Click += new System.EventHandler(this.UpdateCustBtnClick);
             // 
-            // exitBtn
+            // buyItBtn
             // 
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(552, 703);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exitBtn.Size = new System.Drawing.Size(141, 43);
-            this.exitBtn.TabIndex = 9;
-            this.exitBtn.Text = "Buy IT!";
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.buyItBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buyItBtn.Location = new System.Drawing.Point(552, 703);
+            this.buyItBtn.Name = "buyItBtn";
+            this.buyItBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buyItBtn.Size = new System.Drawing.Size(141, 43);
+            this.buyItBtn.TabIndex = 9;
+            this.buyItBtn.Text = "Buy IT!";
+            this.buyItBtn.UseVisualStyleBackColor = true;
+            this.buyItBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // ConfirmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 758);
-            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.buyItBtn);
             this.Controls.Add(this.s);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.panel5);
@@ -452,7 +464,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button s;
-        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button buyItBtn;
         private System.Windows.Forms.Label creditCardLabel;
+        public System.Windows.Forms.TextBox cardNumberTxt;
     }
 }

@@ -61,6 +61,7 @@ namespace _3B
                 shoppingCartControl.textBox1.Text = book.BookQuantity.ToString(CultureInfo.InvariantCulture);
                 shoppingCartControl.quantityPriceLabel.Text = "$" +
                                                               ((double) book.BookQuantity*(double) book.Book.price);
+                shoppingCartControl.Book = book;
                 shoppingCartControls.Add(shoppingCartControl);
             }
         }
@@ -94,12 +95,21 @@ namespace _3B
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double subtotal = 0;
-            foreach (var shoppingCartControl in shoppingCartControls)
+            try
             {
-                subtotal = subtotal + Double.Parse(shoppingCartControl.priceLabel.Text);
+
+                double subtotal = 0;
+                foreach (var shoppingCartControl in shoppingCartControls)
+                {
+                    subtotal = subtotal + Double.Parse(shoppingCartControl.quantityPriceLabel.Text.Replace('$', ' '));
+                }
+                totalLabel.Text = "$" + subtotal;
             }
-            totalLabel.Text = "$"+subtotal.ToString();
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         private void proceedChckoutBtn_Click(object sender, EventArgs e)
@@ -114,7 +124,7 @@ namespace _3B
                 }
                 else
                 {
-                    ConfirmOrder confirmOrder = ConfirmOrder.getInstance();
+                    ConfirmOrder confirmOrder = new ConfirmOrder();
                     confirmOrder.Show();
                     this.Hide();
                 }

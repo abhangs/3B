@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _3B
 {
-    class ShoppingCartData
+    public class ShoppingCartData
     {
         private static bookstoreEntities1 bookstoreEntities1;
         private string userName;
@@ -97,6 +97,7 @@ namespace _3B
                         customer.fname = result.FirstOrDefault().fname;
                         customer.lname = result.FirstOrDefault().lname;
                         customer.address = result.FirstOrDefault().address;
+                        customer.city = result.FirstOrDefault().city;
                         customer.state = result.FirstOrDefault().state;
                         customer.zip = result.FirstOrDefault().zip;
                     }

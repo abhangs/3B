@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,17 +43,20 @@ namespace _3B
                 customerNameLbl.Text = ShoppingCartData.getInstance().Customer.fname + " " +
                                        ShoppingCartData.getInstance().Customer.lname;
                 streetAddressLbl.Text = ShoppingCartData.getInstance().Customer.address;
+                cityLabel.Text = ShoppingCartData.getInstance().Customer.city;
                 stateLbl.Text = ShoppingCartData.getInstance().Customer.state;
                 zipLbl.Text = ShoppingCartData.getInstance().Customer.zip.ToString();
 
-                var username = ShoppingCartData.getInstance().Customer.username;
+                var username = ShoppingCartData.getInstance().UserName;
                 var result =
-                    bookstoreEntities1.customers.Where(c => c.username.Equals(username)).Select(c => c.creditcardnumber);
+                    bookstoreEntities1.customers.Where(c => c.username.Equals(username));
+
+              //  creditCardLabel.Text = result.FirstOrDefault(); 
 
                 useCreditCardRadioBtn.Checked = true;
                 if (result.FirstOrDefault() != null)
                 {
-                    creditCardLabel.Text = result.FirstOrDefault();
+                     cardNumberTxt.Text = result.FirstOrDefault().creditcardnumber;
                 }
 
                 newCardRadioBtn.Checked = false;
@@ -67,12 +72,14 @@ namespace _3B
                 {
                     confirmOrderControl confirmOrderControl = new confirmOrderControl();
                     confirmOrderControl.bookTitleLbl.Text = bookOrder.Book.title;
-                    var authors = bookstoreEntities1.authors.Where(a => a.bookid == bookOrder.Book.bookid);
+                    ShoppingCartData.BookListing order = bookOrder;
+                    var authors = bookstoreEntities1.authors.Where(a => a.bookid == order.Book.bookid);
                     if (authors.FirstOrDefault() != null)
                         foreach (var author in authors)
                         {
                             stringBuilder.Append("'" + author.fname + " " + author.lname + "'");
                         }
+                    confirmOrderControl.byLabel.Text = stringBuilder.ToString();
                     confirmOrderControl.priceLbl.Text = "$" + bookOrder.Book.price;
                     confirmOrderControl.quantityLbl.Text = bookOrder.BookQuantity.ToString();
                     confirmOrderControl.quantityPriceLbl.Text = "$" + (bookOrder.BookQuantity * bookOrder.Book.price);
@@ -104,8 +111,17 @@ namespace _3B
 
         private void newCardRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
-            cardTypeCmbBox.Enabled = true;
-            cardNumberTxtBox.Enabled = true;
+            if (newCardRadioBtn.Checked)
+            {
+                cardTypeCmbBox.Enabled = true;
+                cardNumberTxtBox.Enabled = true;
+            }
+            else
+            {
+                cardTypeCmbBox.Enabled = false;
+                cardNumberTxtBox.Enabled = false;
+                
+            }
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -129,15 +145,57 @@ namespace _3B
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            ProofOfPurchase proofOfPurchase = new ProofOfPurchase();
-            proofOfPurchase.Show();
-            this.Close();
+            try
+            {
+                var username = ShoppingCartData.getInstance().UserName;
+
+                if (newCardRadioBtn.Checked)
+                {
+                    var creditcardtype = cardTypeCmbBox.SelectedItem.ToString();
+                    var creditCardNumber = cardNumberTxtBox.Text;
+
+                    var customer = bookstoreEntities1.customers.FirstOrDefault(c => c.username == username);
+                    customer.creditcardnumber = creditCardNumber;
+                    customer.creditcardtype = creditcardtype;
+
+                    bookstoreEntities1.customers.AddOrUpdate(customer);
+                    
+                }
+                foreach (var bookResult in ShoppingCartData.getInstance().BookLsListings )
+                {
+                    book book = bookResult.Book;
+                    book.quantity = (bookResult.Book.quantity - bookResult.BookQuantity);
+                    bookstoreEntities1.books.AddOrUpdate(book);
+                    bookstoreEntities1.SaveChanges();
+                }
+
+                
+                ProofOfPurchase proofOfPurchase = new ProofOfPurchase();
+                proofOfPurchase.Show();
+                this.Hide();
+            }
+            catch (Exception exception)
+            {
+                
+                
+            }
         }
 
         private void ConfirmOrder_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+
+       
+
+        private void printBtn_Click_1(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = ShoppingCart.getInstance();
+            shoppingCart.Show();
+            this.Hide();
+        }
+
+        
 
 
 

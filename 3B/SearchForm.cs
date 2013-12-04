@@ -55,7 +55,9 @@ namespace _3B
         {
             SearchResult searchResult = SearchResult.getInstance();
             TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
-           
+
+           searchResult.panel1.Controls.Clear();
+            
             int i = 0;
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -240,7 +242,9 @@ namespace _3B
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.StackTrace);
+                //MessageBox.Show(exception.StackTrace);
+                MessageBox.Show("Error searching for a book. Please check input values or contact the administrator",
+                    "Error!", MessageBoxButtons.OK);
             }
 
 

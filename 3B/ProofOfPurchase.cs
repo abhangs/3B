@@ -29,12 +29,13 @@ namespace _3B
             customerNameLbl.Text = ShoppingCartData.getInstance().Customer.fname + " " +
                                    ShoppingCartData.getInstance().Customer.lname;
             streetAddressLbl.Text = ShoppingCartData.getInstance().Customer.address;
+            cityLabel.Text = ShoppingCartData.getInstance().Customer.city;
             stateLbl.Text = ShoppingCartData.getInstance().Customer.state;
             zipLbl.Text = ShoppingCartData.getInstance().Customer.zip.ToString();
 
          
 
-            var username = ShoppingCartData.getInstance().Customer.username;
+            var username = ShoppingCartData.getInstance().UserName;
             var result =
                 bookstoreEntities1.customers.Where(c => c.username.Equals(username)).Select(c => c.creditcardnumber);
             if (result.FirstOrDefault() != null)

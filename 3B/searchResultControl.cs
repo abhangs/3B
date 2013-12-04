@@ -35,7 +35,7 @@ namespace _3B
             bookListing.BookQuantity = 1;
             shoppingCart.BookLsListings.Add(bookListing);
             this.button1.Enabled = false;
-            SearchResult.INSTANCE.GetTotalItems();
+            SearchResult.getInstance().GetTotalItems();
         }
 
         private void button2_Click(object sender, EventArgs e)

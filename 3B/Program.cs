@@ -32,6 +32,7 @@ namespace _3B
                     bookstoreEntities1.categories.Where(c => c.categoryname == category).Select(c => c.categoryid);
                 
                 bookstoreEntities1.customers.Where(c => c.username == username).ToList().ForEach( c => c.categorylastsearched = categorysearched.FirstOrDefault());
+                bookstoreEntities1.SaveChanges();
             }
 
           //  Application.Exit();

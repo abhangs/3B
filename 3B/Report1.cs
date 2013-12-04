@@ -27,8 +27,8 @@ namespace _3B
             try
             {
                 sc.Open();
-                cmd = new SqlCommand("select categoryname as Category, sum(saleslines.price) as Total_Sales from category join books  on category.categoryid=books.categoryid join saleslines on saleslines.bookid=books.bookid join sales on sales.salesid= saleslines.salesid where [date] in (select sales.date from sales where CONVERT(VARCHAR(2), sales.date,1) in((SELECT CONVERT(VARCHAR(2), GETDATE(), 1) AS [MM/DD/YY] )-1)) group by category.categoryname", sc);
-
+            //    cmd = new SqlCommand("select categoryname as Category, sum(saleslines.price) as Total_Sales from category join books  on category.categoryid=books.categoryid join saleslines on saleslines.bookid=books.bookid join sales on sales.salesid= saleslines.salesid where [date] in (select sales.date from sales where CONVERT(VARCHAR(2), sales.date,1) in((SELECT CONVERT(VARCHAR(2), GETDATE(), 1) AS [MM/DD/YY] )-1)) group by category.categoryname", sc);
+                cmd = new SqlCommand("Select category, totalsales from report3",sc);
                 SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter();
 
                 sqlDataAdapter1.SelectCommand = cmd;
@@ -68,6 +68,11 @@ namespace _3B
             rm.Show();
             this.Hide();
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -10,5 +10,8 @@ namespace _3B
     {
         public static string adminName="admin1";
         public static string userName;
+        public static int currRow = 0;
+        public static int maxRows = 0;
+        public static Boolean pendingOrders= true;
     }
 }

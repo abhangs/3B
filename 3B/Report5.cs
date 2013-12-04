@@ -11,23 +11,29 @@ using System.Data.SqlClient;
 
 namespace _3B
 {
-    public partial class Report3 : Form
+    public partial class Report5 : Form
     {
         SqlConnection sc = new SqlConnection("Data Source=BUNKMASTER-PC;Initial Catalog=bookstore;Integrated Security=True");
         SqlCommand cmd;
 
-
-        public Report3()
+        public Report5()
         {
             InitializeComponent();
         }
 
-        private void Report3_Load(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            ReportMenu rm = new ReportMenu();
+            rm.Show();
+            this.Hide();
+        }
+
+        private void Report5_Load(object sender, EventArgs e)
         {
             try
             {
                 sc.Open();
-                cmd = new SqlCommand(" select * from report3", sc);
+                cmd = new SqlCommand("select * from categoryBuyers", sc);
 
                 SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter();
 
@@ -38,41 +44,18 @@ namespace _3B
                 DataTable dt = new DataTable();
                 sqlDataAdapter1.Fill(dt);
 
-                bindingSource1.DataSource = dt;
+              //  bindingSource1.DataSource = dt;
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dataGridView1.Refresh();
 
-           //     cmd = new SqlCommand("select b.title, c.categoryid, b.bookid from books where b.bookid in ", sc);
-
                 sc.Close();
-
-
             }
             catch (SqlException ex)
-            {               
-                Application.Exit();
+            {
+                MessageBox.Show("Error in showing report 2");
             }
-
-        }
-
-        private void Report3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            ReportMenu rm = new ReportMenu();
-            rm.Show();
-            this.Hide();
-
 
         }
     }

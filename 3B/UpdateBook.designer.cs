@@ -57,8 +57,8 @@
             this.reactivateButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.statusTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -71,6 +71,7 @@
             this.cancelButton.TabIndex = 47;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // insertButton
             // 
@@ -354,27 +355,27 @@
             this.statusTextBox.Size = new System.Drawing.Size(136, 26);
             this.statusTextBox.TabIndex = 52;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(129, 313);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 111);
-            this.panel1.TabIndex = 53;
-            // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(129, 98);
+            this.panel2.Location = new System.Drawing.Point(129, 313);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(369, 82);
-            this.panel2.TabIndex = 54;
+            this.panel2.Size = new System.Drawing.Size(369, 111);
+            this.panel2.TabIndex = 53;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(129, 98);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(369, 82);
+            this.panel1.TabIndex = 54;
             // 
             // UpdateBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 542);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.reactivateButton);
@@ -433,7 +434,7 @@
         public System.Windows.Forms.TextBox ISBNTextbox;
         public System.Windows.Forms.TextBox statusTextBox;
         public System.Windows.Forms.TextBox titleTextBox;
-        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button moreAuthorsButton;
         public System.Windows.Forms.Button fewerAuthorButton;
         public System.Windows.Forms.TextBox publisherTextBox;
@@ -442,7 +443,7 @@
         public System.Windows.Forms.TextBox qtyTextBox;
         public System.Windows.Forms.TextBox PriceTextBox;
         public System.Windows.Forms.TextBox minQtyTextBox;
-        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button moreReviewsButton;
         public System.Windows.Forms.Button fewerReviewsButton;
         public System.Windows.Forms.Button reactivateButton;

@@ -73,7 +73,7 @@ namespace _3B
 
                     SearchForm searchForm = SearchForm.getInstance();
                     searchForm.Show();
-                    this.Close();
+                    this.Hide();
 
                 }
                 catch (Exception exception)
@@ -191,7 +191,7 @@ namespace _3B
 
         private void custRegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
 
        

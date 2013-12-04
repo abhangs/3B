@@ -27,8 +27,9 @@ namespace _3B
         private void placeOrderButton_Click(object sender, EventArgs e)
         {
             PlacingOrders po = new PlacingOrders();
-            po.Show();
-            this.Hide();
+            if(po.LoadOrders())
+                po.Show();
+            
         }
 
         private void generateReportButton_Click(object sender, EventArgs e)
@@ -47,7 +48,9 @@ namespace _3B
 
         private void systemMaintButton_Click(object sender, EventArgs e)
         {
-
+            SystemMaintenance systemMaintenance = new SystemMaintenance();
+            systemMaintenance.Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)

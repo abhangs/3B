@@ -106,16 +106,21 @@ namespace _3B
                     updateBook.categoryComboBox.Items.Add(category.categoryname);
                 }
 
-                updateBook.categoryComboBox.SelectedText =
-                    bookstoreEntities1.categories.Where(c => c.categoryid == book.categoryid)
-                        .Select(c => c.categoryname).FirstOrDefault();
+                //updateBook.categoryComboBox.SelectedText =
+                //    bookstoreEntities1.categories.Where(c => c.categoryid == book.categoryid)
+                //        .Select(c => c.categoryname).FirstOrDefault();
 
+                updateBook.categoryComboBox.SelectedIndex =
+                    updateBook.categoryComboBox.Items.IndexOf(
+                        bookstoreEntities1.categories.Where(c => c.categoryid == book.categoryid)
+                            .Select(c => c.categoryname).FirstOrDefault());
+                int i = 0;
                 foreach (var author in authors)
                 {
                     var insertBookControlAuthor = new InsertBookControl_Author();
                     insertBookControlAuthor.authorFnameTxt.Text = author.fname;
                     insertBookControlAuthor.authorLnameTxt.Text = author.lname;
-                   updateBook. tableLayoutPanel1.Controls.Add(insertBookControlAuthor);
+                    updateBook.tableLayoutPanel1.Controls.Add(insertBookControlAuthor,0,i++);
                 }
 
                 if (authors.Count() > 1)
@@ -128,7 +133,7 @@ namespace _3B
                     var textBox = new TextBox();
                     textBox.Text = review.review1;
                     textBox.Size = new Size(350,26);
-                    updateBook.tableLayoutPanel2.Controls.Add(textBox);
+                    updateBook.tableLayoutPanel2.Controls.Add(textBox,0,i++);
                 }
 
                 if (reviews.Count() > 1)
@@ -136,7 +141,7 @@ namespace _3B
                     updateBook.fewerReviewsButton.Enabled = true;
                 }
 
-                updateBook.tableLayoutPanel1 = new TableLayoutPanel();
+              //  updateBook.tableLayoutPanel1 = new TableLayoutPanel();
                 updateBook.tableLayoutPanel1.Location = new Point(129, 98);
                 updateBook.tableLayoutPanel1.Size = new Size(369, 82);
                 updateBook.tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -145,7 +150,7 @@ namespace _3B
                 updateBook.tableLayoutPanel1.Name = "tableLayoutPanel1";
                 updateBook.tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
-                updateBook.tableLayoutPanel2 = new TableLayoutPanel();
+             //   updateBook.tableLayoutPanel2 = new TableLayoutPanel();
                 updateBook.tableLayoutPanel2.Location = new Point(129, 313);
                 updateBook.tableLayoutPanel2.Size = new Size(369, 111);
                 updateBook.tableLayoutPanel2.Dock = DockStyle.Fill;
@@ -155,7 +160,9 @@ namespace _3B
                 updateBook.tableLayoutPanel2.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
                 updateBook.panel1.Controls.Add(updateBook.tableLayoutPanel1);
-                updateBook.panel1.Controls.Add(updateBook.tableLayoutPanel2);
+                updateBook.panel2.Controls.Add(updateBook.tableLayoutPanel2);
+                updateBook.Show();
+                this .Hide();
 
             }
             catch (Exception exception)

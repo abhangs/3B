@@ -26,7 +26,10 @@ namespace _3B
             try
             {
                 sc.Open();
-                cmd = new SqlCommand("select sum(s.price*s.quantity) as Total_Sales, categoryname as Categoty from category c join books b on b.categoryid=c.categoryid  join saleslines s on s.bookid=b.bookid where s.price in (select max(price) as expensivebook from books where b.bookid=books.bookid  group by categoryid order by expensivebook desc)  group by categoryname", sc);
+             //   cmd = new SqlCommand("select sum(s.price*s.quantity) as Total_Sales, categoryname as Categoty from category c join books b on b.categoryid=c.categoryid  join saleslines s on s.bookid=b.bookid where s.price in (select max(price) as expensivebook from books where b.bookid=books.bookid  group by categoryid order by expensivebook desc)  group by categoryname", sc);
+
+                cmd = new SqlCommand("select * from report4 order by price desc", sc);
+
                 SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter();
 
                 sqlDataAdapter1.SelectCommand = cmd;

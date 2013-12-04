@@ -42,7 +42,7 @@ namespace _3B
                 updatedBook.publisher = publisherTextBox.Text;
                 updatedBook.year = short.Parse(yearTextBox.Text);
                 updatedBook.minquantity = short.Parse(minQtyTextBox.Text);
-                updatedBook.price = double.Parse(PriceTextBox.Text);
+                updatedBook.price = double.Parse(PriceTextBox.Text.Replace('$',' '));
                 updatedBook.categoryid =
                     bookstoreEntities1.categories.Where(c => c.categoryname == updatedCategory)
                         .Select(c => c.categoryid)
@@ -100,7 +100,7 @@ namespace _3B
 
         private void fewerAuthorButton_Click(object sender, EventArgs e)
         {
-            tableLayoutPanel1.Controls.RemoveAt(tableLayoutPanel1.Controls.Count-1);
+            tableLayoutPanel1.Controls.RemoveAt(tableLayoutPanel1.Controls.Count - 1);
             if (tableLayoutPanel1.Controls.Count == 1)
                 fewerAuthorButton.Enabled = false;
             Refresh();
@@ -134,6 +134,14 @@ namespace _3B
         {
             Application.Exit();
 
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+           
+            ModifyDeleteBooks modifyDeleteBooks = new ModifyDeleteBooks();
+            modifyDeleteBooks.Show();
+            this.Hide();
         }
     }
 }

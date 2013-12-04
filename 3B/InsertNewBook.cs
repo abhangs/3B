@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Data.Entity.Validation;
 
 namespace _3B
 {
@@ -119,15 +121,17 @@ namespace _3B
         {
             bookstoreEntities1 = new bookstoreEntities1();
             book newBook =  new book();
-            
+
             try
             {
                 newBook.bookid = ISBNTextbox.Text;
                 newBook.title = titleTextBox.Text;
                 newBook.publisher = publisherTextBox.Text;
-                newBook.year =short.Parse(yearTextBox.Text);
+                newBook.year = short.Parse(yearTextBox.Text);
                 newBook.price = double.Parse(PriceTextBox.Text);
                 newBook.minquantity = short.Parse(minQtyTextBox.Text);
+                newBook.deleted = false;
+                newBook.quantity = short.Parse(minQtyTextBox.Text) + 2;
 
                 var category = categoryComboBox.SelectedItem.ToString();
                 var categoryId = bookstoreEntities1.categories.Where(c => c.categoryname.Contains(category));
@@ -136,28 +140,51 @@ namespace _3B
 
                 foreach (var authorControl in tableLayoutPanel.Controls)
                 {
-                   InsertBookControl_Author authorInsertBookControlAuthor = (InsertBookControl_Author) authorControl;
-                   author author = new author { bookid = newBook.bookid, fname = authorInsertBookControlAuthor.authorFnameTxt.Text, lname = authorInsertBookControlAuthor.authorLnameTxt.Text };
-                   bookstoreEntities1.authors.Add(author);
+                    InsertBookControl_Author authorInsertBookControlAuthor = (InsertBookControl_Author) authorControl;
+                    author author = new author
+                    {
+                        bookid = newBook.bookid,
+                        fname = authorInsertBookControlAuthor.authorFnameTxt.Text,
+                        lname = authorInsertBookControlAuthor.authorLnameTxt.Text
+                    };
+                    bookstoreEntities1.authors.Add(author);
                 }
 
                 foreach (var reviewControl in tableLayoutPanel2.Controls)
                 {
                     TextBox review = (TextBox) reviewControl;
-                    review newReview =  new review{bookid = newBook.bookid, review1 = review.Text};
+                    review newReview = new review {bookid = newBook.bookid, review1 = review.Text};
                     bookstoreEntities1.reviews.Add(newReview);
                 }
 
-                 bookstoreEntities1.books.Add(newBook);
+                bookstoreEntities1.books.Add(newBook);
 
                 bookstoreEntities1.SaveChanges();
+                
+                MessageBox.Show("Book information saved successfully", "Info", MessageBoxButtons.OK);
 
             }
-            catch (Exception exception)
+                //catch (Exception exception )
+                //{
+
+                //    MessageBox.Show(exception.StackTrace);
+                //}
+
+            catch (DbEntityValidationException dbEntityValidation)
             {
+                foreach (var validationErrors in dbEntityValidation.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
 
-                MessageBox.Show(exception.StackTrace);
+                MessageBox.Show("Error saving book information. Please check values or contact administrator", "Error!",
+                    MessageBoxButtons.OK);
+
             }
+
         }
 
         private void InsertNewBook_FormClosing(object sender, FormClosingEventArgs e)

@@ -36,13 +36,15 @@ namespace _3B
 
         public void GetTotalItems()
         {
-            this.currentItemCountLbl.Text = "Your Shopping Cart has " + ShoppingCartData.getInstance().BookLsListings.Count + " items";
+            ShoppingCartData shoppingCartData = ShoppingCartData.getInstance();
+            this.currentItemCountLbl.Text = "Your Shopping Cart has " + shoppingCartData.BookLsListings.Count + " items";
+            Refresh();
         }
 
         private void newSearchBtn_Click(object sender, EventArgs e)
         {
             SearchForm searchForm =
-                SearchForm.getInstance();
+                new SearchForm();
             searchForm.Show();
             this.Hide();
         }
@@ -88,9 +90,8 @@ namespace _3B
 
         private void SearchResult_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
-       
     }
 }
