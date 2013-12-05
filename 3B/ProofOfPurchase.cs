@@ -45,17 +45,20 @@ namespace _3B
           
             double subTotal = 0;
 
+            StringBuilder stringBuilder = new StringBuilder();
+
             foreach (var bookOrder in ShoppingCartData.getInstance().BookLsListings)
             {
+                stringBuilder.Clear();
                 confirmOrderControl confirmOrderControl = new confirmOrderControl();
                 confirmOrderControl.bookTitleLbl.Text = bookOrder.Book.title;
                 var authors = bookstoreEntities1.authors.Where(a => a.bookid == bookOrder.Book.bookid);
                 if (authors.FirstOrDefault() != null)
                     foreach (var author in authors)
                     {
-                        confirmOrderControl.byLabel.Text = confirmOrderControl.byLabel.Text + " " + author.fname + " " +
-                                                           author.lname;
+                        stringBuilder.Append(author.fname + " " + author.lname + " ");
                     }
+                confirmOrderControl.byLabel.Text = stringBuilder.ToString();
                 confirmOrderControl.priceLbl.Text = "$" + bookOrder.Book.price;
                 confirmOrderControl.quantityLbl.Text = bookOrder.BookQuantity.ToString();
                 confirmOrderControl.quantityPriceLbl.Text = "$" + (bookOrder.BookQuantity * bookOrder.Book.price);
@@ -86,6 +89,8 @@ namespace _3B
         private void newSearchBtn_Click(object sender, EventArgs e)
         {
             SearchForm searchForm = SearchForm.getInstance();
+            ShoppingCartData shoppingCartData = ShoppingCartData.getInstance();
+            shoppingCartData.BookLsListings.Clear();
             searchForm.Show();
             this.Hide();
         }

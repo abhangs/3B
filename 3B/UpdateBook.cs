@@ -78,6 +78,8 @@ namespace _3B
                     bookstoreEntities1.reviews.Add(new review { bookid = updatedBook.bookid, review1 = reviewText });
                 }
 
+                bookstoreEntities1.books.AddOrUpdate(updatedBook);
+
                 bookstoreEntities1.SaveChanges();
                 MessageBox.Show("Changes saved successfully", "Message", MessageBoxButtons.OK);
 
@@ -139,8 +141,8 @@ namespace _3B
         private void cancelButton_Click(object sender, EventArgs e)
         {
            
-            ModifyDeleteBooks modifyDeleteBooks = new ModifyDeleteBooks();
-            modifyDeleteBooks.Show();
+            ManageBookstoreCatalog manageBookstoreCatalog = new ManageBookstoreCatalog();
+            manageBookstoreCatalog.Show();
             this.Hide();
         }
     }

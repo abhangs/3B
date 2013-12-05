@@ -130,7 +130,7 @@ namespace _3B
                         expirydate = cardExpiry
                     };
 
-                    bookstoreEntities1.customers.AddOrUpdate( c => c.username == userName);
+                    bookstoreEntities1.customers.AddOrUpdate(customer);
                     if (bookstoreEntities1.SaveChanges() > 1)
                     {
                         MessageBox.Show("Customer details updated successfully", "Info", MessageBoxButtons.OK);
@@ -156,7 +156,7 @@ namespace _3B
             var states = from s in bookstoreEntities1.states select s;
             foreach (var state in states)
             {
-                stateCmbBox.Items.Add(state.statename); 
+                stateCmbBox.Items.Add(state.statename);
             }
 
             var cardType = bookstoreEntities1.creditcardtypes;
@@ -164,7 +164,15 @@ namespace _3B
             {
                 cardTypeCmbBox.Items.Add(creditcardtype.creditcardtype1);
             }
+            stateCmbBox.SelectedIndex = 0;
+            cardTypeCmbBox.SelectedIndex = 0;
 
+        }
+
+        public void setStateCardTypeInfo(string statename, string cardType)
+        {
+            stateCmbBox.SelectedIndex = stateCmbBox.Items.IndexOf(statename);
+            cardTypeCmbBox.SelectedIndex = cardTypeCmbBox.Items.IndexOf(cardType);
         }
 
         private void btnDontRegister_Click(object sender, EventArgs e)
@@ -182,8 +190,8 @@ namespace _3B
                     MessageBox.Show("In order to proceed with the payment, you need to register first.", "Message",
                         MessageBoxButtons.OK);
                 else
-                {
-                    this.Close();
+                { 
+                    this.Hide();
                 }
             }
 

@@ -131,7 +131,7 @@ namespace _3B
                 newBook.price = double.Parse(PriceTextBox.Text);
                 newBook.minquantity = short.Parse(minQtyTextBox.Text);
                 newBook.deleted = false;
-                newBook.quantity = short.Parse(minQtyTextBox.Text) + 2;
+                newBook.quantity = 10;
 
                 var category = categoryComboBox.SelectedItem.ToString();
                 var categoryId = bookstoreEntities1.categories.Where(c => c.categoryname.Contains(category));

@@ -52,13 +52,14 @@ namespace _3B
 
                         foreach (book b in result)
                         {
-                            if (b.deleted != true)
+                            if (b.deleted != true && b.quantity > 0)
                             {
+                                stringBuilder.Clear();
                                 var searchResultControl = new SearchResultControl();
                                 searchResultControl.bookLbl.Text = b.title;
                                 var authorList = (from a in bookstoreEntities1.authors where a.bookid.Contains(b.bookid) select a);
                                 if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                        stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                        stringBuilder.Append(a.fname + a.lname + " ");
                                 searchResultControl.byLabel.Text = stringBuilder.ToString();
                                 searchResultControl.publisherLabel.Text = b.publisher;
                                 searchResultControl.isbnLabel.Text = b.bookid;

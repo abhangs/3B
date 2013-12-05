@@ -51,12 +51,14 @@ namespace _3B
             foreach (var book in ShoppingCartData.getInstance().BookLsListings)
             {
                 var shoppingCartControl = new shoppingCartControl {bookLabel = {Text = book.Book.title}};
+                shoppingCartControl.authorLabel.Text = "";
+                StringBuilder stringBuilder = new StringBuilder();
                 var authors = from a in BookstoreEntities1.authors where a.bookid == book.Book.bookid select a;
                 foreach (var author in authors)
                 {
-                    shoppingCartControl.authorLabel.Text = shoppingCartControl.authorLabel.Text + " " + author.fname +
-                                                           author.lname;
+                    stringBuilder.Append(author.fname + author.lname + " ");
                 }
+                shoppingCartControl.authorLabel.Text = stringBuilder.ToString();
                 shoppingCartControl.priceLabel.Text = "$" + book.Book.price;
                 shoppingCartControl.textBox1.Text = book.BookQuantity.ToString(CultureInfo.InvariantCulture);
                 shoppingCartControl.quantityPriceLabel.Text = "$" +
@@ -68,6 +70,7 @@ namespace _3B
 
         public void UpdateDisplay()
         {
+            shoppingItemPanel.Controls.Clear();
             TableLayoutPanel tableLayout = new TableLayoutPanel();
             double subtotal = 0;
 

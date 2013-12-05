@@ -77,9 +77,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(300, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 29);
+            this.label1.Size = new System.Drawing.Size(221, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Confirm Order";
+            this.label1.Text = "Proof of Purchase";
             // 
             // panel1
             // 
@@ -448,7 +448,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MaximizeBox = false;
             this.Name = "ProofOfPurchase";
-            this.Text = "Confirm Order - 3-B.com";
+            this.Text = "Proof of Purchase - 3-B.com";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProofOfPurchase_FormClosing);
             this.Load += new System.EventHandler(this.ProofOfPurchase_Load);
             this.panel1.ResumeLayout(false);

@@ -334,28 +334,28 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox pinTxtBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox reTypePinTxtBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox fNameTxtBox;
-        private System.Windows.Forms.TextBox lNameTxtBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox addressTxtBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox cityTxtBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox zipTxtBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox stateCmbBox;
-        private System.Windows.Forms.ComboBox cardTypeCmbBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox cardNumberTxtBox;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox cardExpTxtBox;
         public System.Windows.Forms.TextBox usernameTxtBox;
         public System.Windows.Forms.Button btnRegister;
         public System.Windows.Forms.Button btnDontRegister;
+        public System.Windows.Forms.TextBox pinTxtBox;
+        public System.Windows.Forms.TextBox reTypePinTxtBox;
+        public System.Windows.Forms.TextBox fNameTxtBox;
+        public System.Windows.Forms.TextBox lNameTxtBox;
+        public System.Windows.Forms.TextBox addressTxtBox;
+        public System.Windows.Forms.TextBox cityTxtBox;
+        public System.Windows.Forms.TextBox zipTxtBox;
+        public System.Windows.Forms.TextBox cardNumberTxtBox;
+        public System.Windows.Forms.TextBox cardExpTxtBox;
+        public System.Windows.Forms.ComboBox stateCmbBox;
+        public System.Windows.Forms.ComboBox cardTypeCmbBox;
     }
 }

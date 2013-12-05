@@ -58,6 +58,7 @@ namespace _3B
                     if (result != null && int.Parse(textBox1.Text) > (int)result.quantity)
                     {
                         MessageBox.Show("Available quantity: " + result.quantity);
+                        textBox1.Text = result.quantity.ToString();
                         return;
                     }
 

@@ -59,6 +59,13 @@ namespace _3B
                      cardNumberTxt.Text = result.FirstOrDefault().creditcardnumber;
                 }
 
+                var cardTypes = bookstoreEntities1.creditcardtypes;
+                foreach (var creditcardtype in cardTypes)
+                {
+                    cardTypeCmbBox.Items.Add(creditcardtype.creditcardtype1);
+                }
+                cardTypeCmbBox.SelectedIndex = 0;
+
                 newCardRadioBtn.Checked = false;
                 cardTypeCmbBox.Enabled = false;
                 cardNumberTxtBox.Enabled = false;
@@ -70,6 +77,7 @@ namespace _3B
 
                 foreach (var bookOrder in ShoppingCartData.getInstance().BookLsListings)
                 {
+                    stringBuilder.Clear();
                     confirmOrderControl confirmOrderControl = new confirmOrderControl();
                     confirmOrderControl.bookTitleLbl.Text = bookOrder.Book.title;
                     ShoppingCartData.BookListing order = bookOrder;
@@ -77,7 +85,7 @@ namespace _3B
                     if (authors.FirstOrDefault() != null)
                         foreach (var author in authors)
                         {
-                            stringBuilder.Append("'" + author.fname + " " + author.lname + "'");
+                            stringBuilder.Append(author.fname +" "+ author.lname + "  ");
                         }
                     confirmOrderControl.byLabel.Text = stringBuilder.ToString();
                     confirmOrderControl.priceLbl.Text = "$" + bookOrder.Book.price;
@@ -136,11 +144,25 @@ namespace _3B
             bookstoreEntities1 = new bookstoreEntities1();
             custRegisterForm custRegisterForm = new custRegisterForm();
             custRegisterForm.usernameTxtBox.Text = ShoppingCartData.getInstance().UserName;
+
+            var UserName = ShoppingCartData.getInstance().UserName;
+            var customerInfo = bookstoreEntities1.customers.FirstOrDefault(c => c.username == UserName);
             custRegisterForm.usernameTxtBox.ReadOnly = true;
+            custRegisterForm.fNameTxtBox.Text = customerInfo.fname;
+            custRegisterForm.lNameTxtBox.Text = customerInfo.lname;
+            custRegisterForm.addressTxtBox.Text = customerInfo.address;
+            custRegisterForm.cityTxtBox.Text = customerInfo.city;
+            custRegisterForm.zipTxtBox.Text = customerInfo.zip.ToString();
+            custRegisterForm.pinTxtBox.Text = customerInfo.pin;
+            custRegisterForm.reTypePinTxtBox.Text = customerInfo.pin;
+            custRegisterForm.cardNumberTxtBox.Text = customerInfo.creditcardnumber;
+            custRegisterForm.cardExpTxtBox.Text = customerInfo.expirydate;
             custRegisterForm.btnRegister.Text = "Update";
             custRegisterForm.btnDontRegister.Text = "Cancel";
-            custRegisterForm.btnRegister.Click += (o, args) => this.Close();
+            custRegisterForm.btnRegister.Click += (o, args) => custRegisterForm.Close();
+            custRegisterForm.setStateCardTypeInfo(customerInfo.state,customerInfo.creditcardtype);
             custRegisterForm.ShowDialog();
+            
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

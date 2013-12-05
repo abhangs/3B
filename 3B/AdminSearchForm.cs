@@ -55,6 +55,7 @@ namespace _3B
         {
             ModifyDeleteBooks modifyDeleteBooks = new ModifyDeleteBooks();
             TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.Controls.Clear();
            
             int i = 0;
             StringBuilder stringBuilder = new StringBuilder();
@@ -73,12 +74,13 @@ namespace _3B
 
                     foreach (book b in result)
                     {
+                        stringBuilder.Clear();
                         var modifyDeleteBookControl = new ModifyDeleteBookControl();
                         modifyDeleteBookControl.bookLbl.Text = b.title;
                         var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                         if (authorList.FirstOrDefault() != null)
                             foreach (author a in authorList)
-                                stringBuilder.Append("'"+ a.fname + a.lname + "'");
+                                stringBuilder.Append(a.fname + a.lname + " ");
                         modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
                         //searchResultControl.publisherLabel.Text = b.publisher;
                         //searchResultControl.isbnLabel.Text = b.bookid;
@@ -109,11 +111,12 @@ namespace _3B
 
                     foreach (book b in result)
                     {
+                        stringBuilder.Clear();
                         var modifyDeleteBookControl = new ModifyDeleteBookControl();
                         modifyDeleteBookControl.bookLbl.Text = b.title;
                         var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                         if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                                stringBuilder.Append(a.fname + a.lname + " ");
                         modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
                         //searchResultControl.publisherLabel.Text = b.publisher;
                         //searchResultControl.isbnLabel.Text = b.bookid;
@@ -138,11 +141,12 @@ namespace _3B
 
                     foreach (book b in result)
                     {
+                        stringBuilder.Clear();
                         var modifyDeleteBookControl = new ModifyDeleteBookControl();
                         modifyDeleteBookControl.bookLbl.Text = b.title;
                         var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                         if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                                stringBuilder.Append(a.fname + a.lname + " ");
                         
                         modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
                         //searchResultControl.publisherLabel.Text = b.publisher;
@@ -169,11 +173,13 @@ namespace _3B
 
                     foreach (book b in result)
                     {
+                        stringBuilder.Clear();
+                      
                         var modifyDeleteBookControl = new ModifyDeleteBookControl();
                         modifyDeleteBookControl.bookLbl.Text = b.title;
                         var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                         if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                                stringBuilder.Append(a.fname + a.lname + " ");
                         stringBuilder.Remove(stringBuilder.Capacity - 1, 1);
                         modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
                         //searchResultControl.publisherLabel.Text = b.publisher;
@@ -211,11 +217,12 @@ namespace _3B
 
                     foreach (book b in result)
                     {
+                        stringBuilder.Clear();
                         var modifyDeleteBookControl = new ModifyDeleteBookControl();
                         modifyDeleteBookControl.bookLbl.Text = b.title;
                         var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                         if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                stringBuilder.Append("'"+a.fname + a.lname + "'");
+                                stringBuilder.Append(a.fname + a.lname + " ");
                         modifyDeleteBookControl.byLabel.Text = stringBuilder.ToString();
                         //searchResultControl.publisherLabel.Text = b.publisher;
                         //searchResultControl.isbnLabel.Text = b.bookid;

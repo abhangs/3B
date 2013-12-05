@@ -60,6 +60,7 @@ namespace _3B
             
             int i = 0;
             StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Clear();
 
             try
             {
@@ -75,15 +76,16 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        if (b.deleted!=true && b.quantity >0)
                         {
-
+                            
+                            stringBuilder.Clear();
                             var searchResultControl = new SearchResultControl();
                             searchResultControl.bookLbl.Text = b.title;
                             var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                             if (authorList.FirstOrDefault() != null)
                                 foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                    stringBuilder.Append(a.fname + a.lname + " ");
                             searchResultControl.byLabel.Text = stringBuilder.ToString();
                             searchResultControl.publisherLabel.Text = b.publisher;
                             searchResultControl.isbnLabel.Text = b.bookid;
@@ -110,13 +112,14 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        if (b.deleted != true && b.quantity > 0)
                         {
+                            stringBuilder.Clear();
                             var searchResultControl = new SearchResultControl();
                             searchResultControl.bookLbl.Text = b.title;
                             var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                             if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                    stringBuilder.Append(a.fname + a.lname + " ");
                             searchResultControl.byLabel.Text = stringBuilder.ToString();
                             searchResultControl.publisherLabel.Text = b.publisher;
                             searchResultControl.isbnLabel.Text = b.bookid;
@@ -137,13 +140,14 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        if (b.deleted != true && b.quantity > 0)
                         {
+                            stringBuilder.Clear();
                             var searchResultControl = new SearchResultControl();
                             searchResultControl.bookLbl.Text = b.title;
                             var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                             if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                    stringBuilder.Append(a.fname + a.lname + " ");
 
                             searchResultControl.byLabel.Text = stringBuilder.ToString();
                             searchResultControl.publisherLabel.Text = b.publisher;
@@ -166,13 +170,14 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        if (b.deleted != true && b.quantity > 0)
                         {
+                            stringBuilder.Clear();
                             var searchResultControl = new SearchResultControl();
                             searchResultControl.bookLbl.Text = b.title;
                             var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                             if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                    stringBuilder.Append(a.fname + a.lname + " ");
                             stringBuilder.Remove(stringBuilder.Capacity - 1, 1);
                             searchResultControl.byLabel.Text = stringBuilder.ToString();
                             searchResultControl.publisherLabel.Text = b.publisher;
@@ -206,13 +211,14 @@ namespace _3B
 
                     foreach (book b in result)
                     {
-                        if (b.deleted!=true)
+                        if (b.deleted != true && b.quantity > 0)
                         {
+                            stringBuilder.Clear();
                             var searchResultControl = new SearchResultControl();
                             searchResultControl.bookLbl.Text = b.title;
                             var authorList = (from a in bookEntity.authors where a.bookid.Contains(b.bookid) select a);
                             if (authorList.FirstOrDefault() != null) foreach (author a in authorList)
-                                    stringBuilder.Append("'" + a.fname + a.lname + "'");
+                                    stringBuilder.Append(a.fname + a.lname + " ");
                             searchResultControl.byLabel.Text = stringBuilder.ToString();
                             searchResultControl.publisherLabel.Text = b.publisher;
                             searchResultControl.isbnLabel.Text = b.bookid;
@@ -236,6 +242,7 @@ namespace _3B
                 searchResult.panel1.Controls.Add(tableLayoutPanel1);
 
                 ShoppingCartData.getInstance().LastCategorySearched = categoryCmbBox.SelectedItem.ToString();
+                searchResult.GetTotalItems();
                 searchResult.Show();
                 this.Hide();
 
